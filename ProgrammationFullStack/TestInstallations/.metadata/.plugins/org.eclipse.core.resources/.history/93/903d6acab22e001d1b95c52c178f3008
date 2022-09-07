@@ -1,0 +1,14 @@
+package fr.polytech.fsback.dto;
+
+public class ErrorMessagesDto {
+	public int code;
+	public String message;
+	
+	public ErrorMessagesDto(int code, String message) {
+		super();
+		this.code = code;
+		this.message = message;
+	}
+	
+	
+}

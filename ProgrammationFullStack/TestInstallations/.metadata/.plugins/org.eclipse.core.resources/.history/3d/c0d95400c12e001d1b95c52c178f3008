@@ -1,0 +1,14 @@
+package fr.polytech.fsback.services;
+
+import org.springframework.stereotype.Service;
+
+import fr.polytech.fsback.controllers.LivresController;
+import fr.polytech.fsback.dto.LivreDto;
+
+@Service
+public class LivreService {
+	public LivresController livreContr = new LivresController();
+	public LivreDto compar(int id) {
+		return this.livreContr.listeDeLivres.stream().filter(livreDto -> livreDto.getId()==id).findFirst().get();
+	}
+}

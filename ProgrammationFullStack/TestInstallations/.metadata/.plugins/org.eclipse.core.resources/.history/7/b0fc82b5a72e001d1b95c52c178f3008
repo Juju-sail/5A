@@ -1,0 +1,47 @@
+package fr.polytech.fsback.controllers;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import fr.polytech.fsback.Livres;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+@RestController()
+@RequiredArgsConstructor
+@Slf4j
+public class LivresController {
+	public List<Livres> listeDeLivres = new LivresController().getLivres();
+	
+	
+
+	public LivresController() {
+		super();
+		Livres l1 = new Livres(0, "titre 1");
+		Livres l2 = new Livres(1, "titre 2");
+		this.listeDeLivres.add(l1);
+		this.listeDeLivres.add(l2);
+	}
+
+	@GetMapping("/{titre}")
+	public @ResponseBody String getLivre(@PathVariable String titre) {
+		//log.info("retourne un livre par son titre");
+		System.out.println("retourne un livre par son titre");
+		
+		return "Livre" + titre;
+		
+	}
+	
+	@GetMapping()
+	public @ResponseBody List<Livres> getLivres(){
+		
+		return this.listeDeLivres;
+	}
+}

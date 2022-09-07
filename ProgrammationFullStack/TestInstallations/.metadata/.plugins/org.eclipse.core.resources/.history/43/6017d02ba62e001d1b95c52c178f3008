@@ -1,0 +1,19 @@
+package fr.polytech.fsback;
+
+public class Livres {
+	public int id;
+	public String titre;
+	
+	public Livres(int id, String titre) {
+		super();
+		this.id = id;
+		this.titre = titre;
+	}
+
+	@Override
+	public String toString() {
+		return "Livres [id=" + id + ", titre=" + titre + "]";
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package fr.polytech.fsback.dto;
+
+public class LivreDto {
+
+}

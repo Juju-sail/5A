@@ -1,0 +1,6 @@
+package fr.polytech.fsback.controllers;
+
+public class ExceptionsConfig {
+	public int code;
+	public String message;
+}
