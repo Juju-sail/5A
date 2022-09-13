@@ -160,8 +160,8 @@ def jouerCoup( etat, coup , joueur ):
 	# Modifier l'état en jouant un coup 
 	# et retourne True/False si le coup est/n'est pas possible
 
-	if etat[0][coup] != 0:
-		return False
+	if etat[0][coup] != 0: #si ya un pion tout en haut dans cette colone,
+		return False #on ne peut pas jouer
 	
 	h = 0
 	while h < 6 and etat[h][coup] == 0:
