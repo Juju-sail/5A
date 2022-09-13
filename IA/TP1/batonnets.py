@@ -144,4 +144,3 @@ if joueur==1:
     print("PERDU (ordi a gagné) !")
 else:
     print("GAGNE (ordi a perdu) !")
-
