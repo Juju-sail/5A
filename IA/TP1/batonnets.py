@@ -131,7 +131,8 @@ while N > 0:
         n = ordiJoue(N)
         print("(après une réflexion basée sur l'exploration de " + str(nbNoeudsExplores) + " noeuds)")
         print("je prends " + str(n) + " batonnets" )
-
+        t2 = time.time()*1000
+		print("{" + str(round(t2-t1)) + " ms}")
     # jouer le coup
     N = N - n
 
