@@ -15,43 +15,47 @@ RECOMPENSE = 1
 
 def affiche (N):
 	# Affichage du jeu
-	s = ""
-	for i in range(N):
-		s = s + "|"	
-	print(s)
+    s = ""
+    for i in range(N):
+        s = s + "|"	
+    print(s)
 	
 def humainJoue(N):
 	# Retourne le coup joué par l'humain
-	coups = coupsPossibles(N)
+    coups = coupsPossibles(N)
 
-	print("choix possibles : ")
-	print(coups)
+    print("choix possibles : ")
+    print(coups)
 	
-	n = None
-	while n not in coups:
-		n = int(input("combien de bâtonnets ? "))
-	return n
+    n = None
+    while n not in coups:
+        n = int(input("combien de bâtonnets ? "))
+    return n
 
 
 def ordiJoue(N):
 	# Retourne le coup joué par l'ordinateur
-
-
-	# Détermination du meilleur coup
-	
-	meilleurCoup = 1	# à modifier...
-	
+    
+    coups = coupsPossibles(N)
+    maxi = -RECOMPENSE-1
+    # Détermination du meilleur coup
+    for i in coups:
+        tempo = valeurMin(N-i)
+        if(tempo>maxi):
+            maxi = tempo
+            meilleurCoup = i
+    
 	
 	return meilleurCoup
 
 
 def coupsPossibles(N):
-	coups = []
-	for i in range(1,4):
-		if i <= N:
-			coups.append(i)
+    coups = []
+    for i in range(1,4):
+        if i <= N:
+            coups.append(i)
 	
-	return coups
+    return coups
 
 
 
@@ -65,14 +69,19 @@ def valeurMax( N ):
 	"""
 	
 	# pour connaître le nombre total de noeuds explorés:
-	global nbNoeudsExplores 
-	nbNoeudsExplores = nbNoeudsExplores + 1
+    global nbNoeudsExplores 
+    nbNoeudsExplores = nbNoeudsExplores + 1
 	
-	
-	valeur = 0	# à modifier...
-
-
-	return valeur
+	if(N>0):
+        coups = coupsPossibles(N)
+        maxi = -RECOMPENSE-1
+        for i in coups:
+            valeur = valeurMin(N-i)	
+            if(valeur>maxi):
+                maxi = valeur
+        return maxi
+    else:
+        return -RECOMPENSE
 
 
 
@@ -88,11 +97,17 @@ def valeurMin( N ):
 	global nbNoeudsExplores 
 	nbNoeudsExplores = nbNoeudsExplores + 1
 	
+    if(N>0):
+        coups = coupsPossibles(N)
+        mini = RECOMPENSE+1
+        for i in coups:
+            valeur = valeurMax(N-i)	# à modifier...
+            if(valeur<mini):
+                mini = valeur
+        return mini
+    else:
+        return RECOMPENSE
 	
-	valeur = 0	# à modifier...
-
-
-	return valeur
 
 
 
