@@ -32,6 +32,14 @@ public class LivreDto {
 		this.id = id;
 	}
 
+	public String getTitre() {
+		return titre;
+	}
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
 	
 
     
