@@ -34,9 +34,9 @@ public class LivreService {
 		return livre;
 	}
 	
-	public LivreDto deleteLivre(int id) {
-		LivreDto livreSupprime = this.listeDeLivres.stream().filter(livreDto -> livreDto.getId()==id).findFirst().get();
-		this.listeDeLivres.remove(livreSupprime);
-		return livreSupprime;
+	public void deleteLivre(int id) {
+		//LivreDto livreSupprime = this.listeDeLivres.get(id);
+		this.listeDeLivres.remove(this.getLivreById(id));
+		//return livreSupprime;
 	}
 }

@@ -45,16 +45,14 @@ public class LivresController {
 	
 	@PostMapping("/livres")
 	public void postLivre(@Valid @RequestBody LivreDto l) { //valid : prend le dto et verrifie que tout match avec les regles
-		//l.setId((int) (Math.random()*100));
-		//livreService.listeDeLivres.add(l);
 		this.livreService.addLivre(l.getTitre());
 		System.out.println("creer un livre : "+ l.getTitre());
 		
 	}
 	
 	@DeleteMapping("/livres/{id}")
-	public @ResponseBody LivreDto deleteLivre(@PathVariable int id) {
+	public @ResponseBody void deleteLivre(@PathVariable int id) {
 		System.out.println("suppression livre "+ id);
-		return this.livreService.deleteLivre(id);
+		this.livreService.deleteLivre(id);
 	}
 }
