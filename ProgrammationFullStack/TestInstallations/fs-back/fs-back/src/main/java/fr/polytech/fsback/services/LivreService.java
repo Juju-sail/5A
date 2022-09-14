@@ -20,6 +20,7 @@ public class LivreService {
 	}
 	
 	
+	
 	public LivreDto getLivreById(int id) {
 		return this.listeDeLivres.stream().filter(livreDto -> livreDto.getId()==id).findFirst().get();
 	}
