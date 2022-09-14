@@ -1,5 +1,0 @@
-spring.datasource.url=jdbc:postgresql://localhost:5433/fs
-spring.datasource.username=fs
-spring.datasource.password=fs
-spring.jpa.generate-ddl=true
-spring.jpa.hibernate.ddl-auto = update
