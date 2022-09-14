@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import fr.polytech.fsback.dto.LivreDto;
+import fr.polytech.fsback.exceptions.NotFoundException;
 
 @Service
 public class LivreService {
@@ -22,8 +23,12 @@ public class LivreService {
 	
 	
 	public LivreDto getLivreById(int id) {
-		return this.listeDeLivres.stream().filter(livreDto -> livreDto.getId()==id).findFirst().get();
+		return this.listeDeLivres.stream().filter(livreDto -> livreDto.getId()==id)
+				.findFirst()
+				.orElseThrow(() -> new NotFoundException("livre n°" + id + " n'existe pas"));
 	}
 
+	
+	
 	
 }

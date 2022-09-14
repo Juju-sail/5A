@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import fr.polytech.fsback.dto.ErrorMessagesDto;
+import fr.polytech.fsback.exceptions.NotFoundException;
 import lombok.extern.slf4j.Slf4j;
 
 @ControllerAdvice
@@ -28,6 +29,14 @@ public class ExceptionsConfig {
     public ErrorMessagesDto internalServerError(MethodArgumentNotValidException ex) {
         ex.printStackTrace();
         return new ErrorMessagesDto("BAD_REQUEST", null);
+    }
+    
+    @ExceptionHandler(value = NotFoundException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public ErrorMessagesDto notFoundError(NotFoundException ex) {
+        ex.printStackTrace();
+        return new ErrorMessagesDto("BAD_REQUEST", ex.getMessage());
     }
 
 }
