@@ -1,5 +1,0 @@
-package fr.polytech.fsback.controllers;
-
-public class ErrorMessagesDto {
-
-}

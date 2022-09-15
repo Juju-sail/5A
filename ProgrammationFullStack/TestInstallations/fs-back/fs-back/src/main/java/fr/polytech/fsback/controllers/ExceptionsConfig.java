@@ -12,7 +12,6 @@ import fr.polytech.fsback.exceptions.LivresNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 
 @ControllerAdvice
-@Slf4j
 public class ExceptionsConfig {
 
     @ExceptionHandler(value = Exception.class)

@@ -1,34 +1,40 @@
 package fr.polytech.fsback.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import fr.polytech.fsback.dto.LivreDto;
+import fr.polytech.fsback.entity.LivreEntity;
 import fr.polytech.fsback.exceptions.LivresNotFoundException;
+import fr.polytech.fsback.repository.LivreRepository;
+import lombok.Builder;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Service
+@Builder
+@Data
+@RequiredArgsConstructor
 public class LivreService {
-	public List<LivreDto> listeDeLivres = new ArrayList<LivreDto>();
+	private final LivreRepository livreRepository;
 	
 	
-	public LivreService() {
-		LivreDto l1 = new LivreDto((int) (Math.random()*100), "gtr");
-		LivreDto l2 = new LivreDto((int) (Math.random()*100), "fghj");
-		this.listeDeLivres.add(l1);
-		this.listeDeLivres.add(l2);
-	}
-	
-	
-	
-	public LivreDto getLivreById(int id) {
-		return this.listeDeLivres.stream().filter(livreDto -> livreDto.getId()==id)
-				.findFirst() // Trouve le premier livre avec id identique à celui mit dans le filter
-				.orElseThrow(() -> new LivresNotFoundException("livre n°" + id + " n'existe pas"));//si tu trouve pas, message d'erreur perso
+	public LivreEntity getLivreById(int id) {
+		return this.livreRepository.findById(id).orElseThrow(() -> new LivresNotFoundException("livre n°" + id + " n'existe pas"));//si tu trouve pas, message d'erreur perso
 	}
 
-	public LivreDto addLivre(String titre) {
+
+	public List<LivreEntity> getAllLivres() {
+		return this.livreRepository.findAll();
+	}
+	
+	public LivreEntity addLivre(String titre) {
+		final LivreEntity newlivre = LivreEntity.builder().titre(titre).build();
+		this.livreRepository.save(newlivre);
+		return newlivre;
+	}
+
+	/*public LivreDto addLivre(String titre) {
 		LivreDto livre = new LivreDto((int) (Math.random()*100), titre);
 		this.listeDeLivres.add(livre);
 		return livre;
@@ -38,5 +44,5 @@ public class LivreService {
 		//LivreDto livreSupprime = this.listeDeLivres.get(id);
 		this.listeDeLivres.remove(this.getLivreById(id));
 		//return livreSupprime;
-	}
+	}*/
 }

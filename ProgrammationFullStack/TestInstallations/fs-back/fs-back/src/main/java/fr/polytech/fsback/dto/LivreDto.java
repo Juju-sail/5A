@@ -4,6 +4,7 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import fr.polytech.fsback.entity.LivreEntity;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,11 @@ public class LivreDto {
     @JsonProperty("titre")
     @Size(max = 10)
     private String titre;
+    
+    public static LivreDto fromEntity(LivreEntity entity) {
+		
+    	return LivreDto.builder().id(entity.getId()).titre(entity.getTitre()).build();
+    }
 	
     public LivreDto(int id, String titre) {
 		super();
