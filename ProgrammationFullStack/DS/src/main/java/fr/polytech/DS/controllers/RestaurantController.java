@@ -39,6 +39,6 @@ public class RestaurantController {
 	@PostMapping("/restaurants")
 	public RestaurantDto postRestaurant(@Valid @RequestBody RestaurantDto resto) {
 		System.out.println("j'ai ajouté un resto : " + resto);
-		return RestaurantDto.fromEntity(this.restaurantService.addRestaurant(resto.getNom()));
+		return RestaurantDto.fromEntity(this.restaurantService.addRestaurant(resto.getNom(), resto.getAdresse()));
 	}
 }

@@ -25,11 +25,11 @@ public class RestaurantService {
 		return this.restaurantRepository.findAll();
 	}
 	
-	public RestaurantEntity addRestaurant(final String nom) {
+	public RestaurantEntity addRestaurant(final String nom, final String adresse) {
 		EvaluationEntity comm = EvaluationEntity.builder().build();
 		List<EvaluationEntity> nouvelleEval = new ArrayList<EvaluationEntity>();
 		nouvelleEval.add(comm);
-		final RestaurantEntity nouveauRestaurant = RestaurantEntity.builder().nom(nom).evaluations(nouvelleEval).build();
+		final RestaurantEntity nouveauRestaurant = RestaurantEntity.builder().nom(nom).adresse(adresse).evaluations(nouvelleEval).build();
 		return this.restaurantRepository.save(nouveauRestaurant);
 	}
 }
