@@ -28,8 +28,8 @@ public class EvaluationDto {
 	private String commentaire;
 	
 	@JsonProperty("note")
-	@Size(max=3)
-	private int note;
+	//@Size(max=3)
+	private int note; // pas de maxi à 3...
 	
 	public static EvaluationDto fromEntity(EvaluationEntity entity) {
 		return EvaluationDto.builder().id(entity.getId()).commentaire(entity.getCommentaire()).build();
