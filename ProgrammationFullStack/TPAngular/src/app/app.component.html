@@ -1,0 +1,8 @@
+<router-outlet></router-outlet>
+<app-random-counter [(valeurCompteur)]="valeurCompteurPere"></app-random-counter>
+<br>
+<app-counter [valeurCompteurFils]="valeurCompteurPere" (decrement)="decrementCounter()" (increment)="incrementCounter()"></app-counter>
+<br>
+<app-counter-reset (reset)="resetCounter($event)"></app-counter-reset>
+
+
