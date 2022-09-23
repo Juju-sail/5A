@@ -37,5 +37,5 @@ for m in m_val:
     w_c = res[0]
     liste.append(np.linalg.norm(w_c - w_star))
 
-plt.plot(liste, m_val)
+plt.plot(m_val, liste)
 plt.show()
