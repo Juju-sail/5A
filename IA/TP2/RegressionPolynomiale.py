@@ -10,8 +10,20 @@ def polyreg(X, Y, degre):
 	Y 	= [y1; y2; y3; ... ; ym]
 	"""
 	
-	w = 0	# à modifier
+	m = len(Y)
+	n = degre + 1
+	Phi = np.zeros((m, n))
+
+	for i in range(n):
+		# Creation matrice Phi(x) = [x^0, x^1, ..] avec x = [x1, x2, ...] :
+		Phi[:,i] = X[:]**i
+
+	# Calcul de w par les moindres carrés :
+	res = np.linalg.lstsq(Phi,Y) 
+	w = res[0]
 	
+	#print(w)
+
 	return w
 
 def polypred(X, w):
@@ -22,8 +34,13 @@ def polypred(X, w):
 	X 	: vecteur de taille N contenant les N valeurs de x où évaluer le polynome f(x)
 	Y 	: valeurs de polynome f(X) 
 	"""
+	m = len(X)
+	n = len(w)
+	Phi = np.zeros((m, n))
+	for i in range(n):
+		Phi[:,i] = X**i
 	
-	Y = 0	# à modifier
+	Y = Phi.dot(w)
 	
 	return Y
 
@@ -57,18 +74,43 @@ Ytest = Ytest[idx]
 
 # tracer la figure
 
+# plt.plot(Xtest,Ytest,'.r')
+plt.figure(0)
 plt.plot(Xtest,Ytest,'.r')
 plt.plot(Xapp,Yapp,'*b')
 plt.plot(Xtest,np.sinc(Xtest) , 'g')
-plt.legend(['base test', 'base app', 'f_reg(x)'] )
 
 ## 3) implémenter les fonctions polyreg et polypred pour la régression polynomiale unidimensionelle
+w = polyreg(Xapp,Yapp,5)
+Ypred = polypred(Xtest,w)
 
+plt.plot(Xtest,Ypred)
 
 # 4) Réaliser l'apprentissage d'un modèle de degré 5 et calculer les erreurs d'apprentissage et de test
+ErreurTest5 = np.mean((Ytest - Ypred)**2)
+print(ErreurTest5)
+
+plt.figure(1)
+
+# 5) Choix degré optimal : on boucle pour tout montrer : les courbe et les erreurs
+plt.plot(Xapp,Yapp,'*b')
+plt.plot(Xtest,np.sinc(Xtest) , 'g')
+plt.legend(['base app', 'f_reg(x)'])
+plt.axis([-3, 3, -0.8, 1.5])
+ListErreur = []
+for i in range(15):
+	w = polyreg(Xapp, Yapp, i)
+	Ypred = polypred(Xtest, w)
+	plt.plot(Xtest, Ypred)
+
+	ErreurTest = np.mean((Ytest - Ypred)**2)
+	ListErreur.append(ErreurTest)
+
+plt.figure(2)
+
+plt.plot(ListErreur)
 
 
-	
 # Affichage des graphiques : 
 # (à ne faire qu'en fin de programme)
 plt.show() # affiche les plots et attend la fermeture de la fenêtre
