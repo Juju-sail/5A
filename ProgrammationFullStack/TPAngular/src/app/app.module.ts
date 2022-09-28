@@ -7,6 +7,7 @@ import { CounterComponent } from './counter/counter.component';
 import { CounterResetComponent } from './counter-reset/counter-reset.component';
 import { RandomCounterComponent } from './random-counter/random-counter.component';
 import { DirectivePaireBleuDirective } from './directive/directive-paire-bleu.directive';
+import { LivreTableComponent } from './model/livre-table/livre-table.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DirectivePaireBleuDirective } from './directive/directive-paire-bleu.di
     CounterComponent,
     CounterResetComponent,
     RandomCounterComponent,
-    DirectivePaireBleuDirective
+    DirectivePaireBleuDirective,
+    LivreTableComponent
   ],
   imports: [
     BrowserModule,
