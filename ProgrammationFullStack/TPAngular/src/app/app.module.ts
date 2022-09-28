@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CounterComponent } from './counter/counter.component';
-import { CounterResetComponent } from './counter-reset/counter-reset.component';
-import { RandomCounterComponent } from './random-counter/random-counter.component';
+import { CounterComponent } from './components/counter/counter.component';
+import { CounterResetComponent } from './components/counter-reset/counter-reset.component';
+import { RandomCounterComponent } from './components/random-counter/random-counter.component';
 import { DirectivePaireBleuDirective } from './directive/directive-paire-bleu.directive';
-import { LivreTableComponent } from './livre-table/livre-table.component';
-import { HomeComponent } from './home/home.component';
-import { LivresComponent } from './livres/livres.component';
+import { LivreTableComponent } from './components/livre-table/livre-table.component';
+import { HomeComponent } from './components/home/home.component';
+import { LivresComponent } from './components/livres/livres.component';
 
 @NgModule({
   declarations: [
