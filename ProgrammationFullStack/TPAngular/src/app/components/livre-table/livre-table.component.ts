@@ -18,8 +18,13 @@ export class LivreTableComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-    this.livres = this.livreService.getLivre();
+  public ngOnInit(): void {
+    console.log(1)
+    this.livreService.getLivre().subscribe(value => {
+      console.log(2)
+      this.livres = value
+    })
+    console.log(3)
   }
 
 }

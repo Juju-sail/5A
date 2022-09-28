@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import {Observable} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 export interface Livre{
   id: number
@@ -10,9 +12,9 @@ export interface Livre{
 })
 export class LivreServiceService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  public getLivre(): Livre[] {
-    return [{id : 0, titre: "hg"}, {id: 1, titre: "divgt"}]
+  public getLivre(): Observable<Livre[]> {
+    return this.httpClient.get<Livre[]>('http://localhost:8080/livres')
   }
 }

@@ -10,6 +10,8 @@ import { DirectivePaireBleuDirective } from './directive/directive-paire-bleu.di
 import { LivreTableComponent } from './components/livre-table/livre-table.component';
 import { HomeComponent } from './components/home/home.component';
 import { LivresComponent } from './components/livres/livres.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -20,11 +22,12 @@ import { LivresComponent } from './components/livres/livres.component';
     DirectivePaireBleuDirective,
     LivreTableComponent,
     HomeComponent,
-    LivresComponent
+    LivresComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
