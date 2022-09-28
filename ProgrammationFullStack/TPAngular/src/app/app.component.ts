@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -6,31 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public valeurCompteurPere: number = 0;
-  title = 'TPAngular';
-  public compteurArray: number[] = []
-
-  public incrementCounter(): void{
-    this.valeurCompteurPere ++ ;
-    console.log(this.valeurCompteurPere)
-    this.calculArray()
-  }
-  public decrementCounter(): void{
-    this.valeurCompteurPere --;
-    console.log(this.valeurCompteurPere)
-    this.calculArray()
+  constructor(private router: Router) {
   }
 
-  public resetCounter(newValue: number){
-    this.valeurCompteurPere = newValue;
-    this.calculArray()
+  public navigateToLivres(){
+    this.router.navigate(['/livres'])
   }
 
-  private calculArray(): void{
-    this.compteurArray = []
-    for (let i = 0; i < this.valeurCompteurPere; i++) {
-      this.compteurArray.push(i);
-    }
+  public navigateToHome(){
+    this.router.navigate([''])
   }
-
 }

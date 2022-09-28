@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Livre, LivreServiceService} from "../../services/livre-service.service";
+import {Livre, LivreServiceService} from "../services/livre-service.service";
 
 @Component({
   selector: 'app-livre-table',

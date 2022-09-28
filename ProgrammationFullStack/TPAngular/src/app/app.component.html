@@ -1,12 +1,9 @@
+<button (click)="navigateToLivres()">Livres</button>
+<button (click)="navigateToHome()">Home</button>
+<p>-----------------------------------------------------</p>
 <router-outlet></router-outlet>
-<app-random-counter [(valeurCompteur)]="valeurCompteurPere"></app-random-counter>
-<br>
-<app-counter [valeurCompteurFils]="valeurCompteurPere" (decrement)="decrementCounter()" (increment)="incrementCounter()"></app-counter>
-<br>
-<app-counter-reset (reset)="resetCounter($event)"></app-counter-reset>
 
-<p *ngFor = "let i of compteurArray" appDirectivePaireBleu="{{i}}">
-  Voici l'element {{i}}
-</p>
 
-<app-livre-table></app-livre-table>
+
+
+

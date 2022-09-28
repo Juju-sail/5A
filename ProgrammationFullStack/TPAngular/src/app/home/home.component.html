@@ -1,0 +1,9 @@
+<app-random-counter [(valeurCompteur)]="valeurCompteurPere"></app-random-counter>
+<br>
+<app-counter [valeurCompteurFils]="valeurCompteurPere" (decrement)="decrementCounter()" (increment)="incrementCounter()"></app-counter>
+<br>
+<app-counter-reset (reset)="resetCounter($event)"></app-counter-reset>
+
+<p *ngFor = "let i of compteurArray" appDirectivePaireBleu="{{i}}">
+  Voici l'element {{i}}
+</p>
