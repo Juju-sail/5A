@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
 import { CounterResetComponent } from './counter-reset/counter-reset.component';
 import { RandomCounterComponent } from './random-counter/random-counter.component';
+import { DirectivePaireBleuDirective } from './directive/directive-paire-bleu.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterComponent,
     CounterResetComponent,
-    RandomCounterComponent
+    RandomCounterComponent,
+    DirectivePaireBleuDirective
   ],
   imports: [
     BrowserModule,

@@ -5,4 +5,7 @@
 <br>
 <app-counter-reset (reset)="resetCounter($event)"></app-counter-reset>
 
+<p *ngFor = "let i of compteurArray" appDirectivePaireBleu="{{i}}">
+  Voici l'element {{i}}
+</p>
 
