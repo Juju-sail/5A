@@ -34,7 +34,7 @@ def showimage(x):
 #### Programme principal ####
 
 # chargement de la base mnist:
-Xtrain, Xtest, ytrain, ytest = load_mnist(10000, 1000)
+Xtrain, Xtest, ytrain, ytest = load_mnist(60000, 1000)
 
 print("Taille de la base d'apprentissage : ", Xtrain.shape)
 
@@ -56,10 +56,10 @@ bestPourcent = 0
 index = 100
 # On dispose de deux bases : une de test et une géante d'apprentissage
 # Division base géante en une base d'apprentissage et une base de validation 
-Xapp = Xtrain[0:9000, :]
-Xval = Xtrain[9000:10000, :]
-yapp = ytrain[0:9000]
-yval = ytrain[9000:10000]
+Xapp = Xtrain[0:59000, :]
+Xval = Xtrain[59000:60000, :]
+yapp = ytrain[0:59000]
+yval = ytrain[59000:60000]
 
 for i in range(1,15):
 	# On applique le model pour K (qui varie de 1 à 15) sur la base d'apprentissage
@@ -88,5 +88,4 @@ performance = ypredFinal == ytest
 
 perfPourcent = np.mean(performance)*100
 
-print("le meilleur K est ", index, "sa performance est de ", perfPourcent, "%")
-
+print("le meilleur K est", index, "et sa performance est de ", perfPourcent, "%")
