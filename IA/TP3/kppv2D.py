@@ -26,12 +26,14 @@ def monprogramme(Xapp, Yapp, K):
 	
 	# Prédire la catégorie pour tous les points de test...
 	Ypred = kppv.predict(Xtest)
+	
 	# ... et tracer le résultat avec par exemple 
 	# plot(.... 'ob', alpha=0.2) pour des gros points bleus semi-transparents
 	
 	XtestAbRouge = Xtest[Ypred == 2, 0]
 	XtestOrdRouge = Xtest[Ypred == 2, 1]
 	plt.plot(XtestAbRouge, XtestOrdRouge, 'or', alpha = 0.2)
+
 	XtestAbBleu = Xtest[Ypred == 1, 0]
 	XtestOrdBleu = Xtest[Ypred == 1, 1]
 	plt.plot(XtestAbBleu, XtestOrdBleu, 'ob', alpha = 0.2)
