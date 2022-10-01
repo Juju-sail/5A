@@ -46,14 +46,14 @@ def monprogramme(Xapp, Yapp, C):
 	
 	ford = (-b - w[0] * r1)/w[1] # Detail calcul en image dans le dossier
 
-	plt.plot(r1,ford, 'black')
+	plt.plot(r1,ford, 'k')
 
 	# calculer et afficher la marge Delta...
 	
 	delta1 = (1 - b - w[0] * r1)/w[1]
 	delta2 = (-1 - b - w[0] * r1)/w[1]
-	plt.plot(r1,delta1, '--b')
-	plt.plot(r1,delta2, '--b')
+	plt.plot(r1,delta1, '--k')
+	plt.plot(r1,delta2, '--k')
 	
 	# pour réellement mettre à jour le graphique: (à garder en fin de fonction)
 	fig.canvas.draw()
@@ -70,7 +70,8 @@ def monprogrammeNL(Xapp, Yapp, C, sigma):
 	print("Apprentissage lancé avec " + str(len(Xapp)) + " points, C = ", C, " et sigma = ", sigma )
 
 	# à compléter pour apprendre le modèle SVM non linéaire...
-	
+	svm2d = svm.SVC(C = math.inf, kernel= 'rbf', gamma=1/(2*sigma**2))
+	svm2d.fit(Xapp, Yapp)
 	
 	# création d'une grille de points de test
 	r1 = np.arange(-5,5,0.2)
@@ -82,10 +83,16 @@ def monprogrammeNL(Xapp, Yapp, C, sigma):
 			i += 1
 	
 	# Prédire la catégorie pour tous les points de test...
-
+	Ypred = svm2d.predict(Xtest)
 	
 	# ... et tracer le résultat avec par exemple 
+	XtestAbRouge = Xtest[Ypred == 2, 0]
+	XtestOrdRouge = Xtest[Ypred == 2, 1]
+	plt.plot(XtestAbRouge, XtestOrdRouge, 'or', alpha = 0.2)
 
+	XtestAbBleu = Xtest[Ypred == 1, 0]
+	XtestOrdBleu = Xtest[Ypred == 1, 1]
+	plt.plot(XtestAbBleu, XtestOrdBleu, 'ob', alpha = 0.2)
 
 	# afficher le nombre de vecteurs support...	
 
@@ -152,10 +159,10 @@ def onkeypress(event):
 	elif event.key == "-":
 		C /= 2
 		print("C = " , C)
-	elif event.key == "ctrl++":
+	elif event.key == "alt++":
 		sigma *= 2
 		print("sigma = " , sigma)
-	elif event.key == "ctrl+-":
+	elif event.key == "alt+-":
 		sigma /= 2
 		print("sigma = " , sigma)
 				
