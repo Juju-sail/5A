@@ -85,7 +85,7 @@ def monprogrammeNL(Xapp, Yapp, C, sigma):
 	# Prédire la catégorie pour tous les points de test...
 	Ypred = svm2d.predict(Xtest)
 	
-	# ... et tracer le résultat avec par exemple 
+	# ... et tracer le résultat 
 	XtestAbRouge = Xtest[Ypred == 2, 0]
 	XtestOrdRouge = Xtest[Ypred == 2, 1]
 	plt.plot(XtestAbRouge, XtestOrdRouge, 'or', alpha = 0.2)
