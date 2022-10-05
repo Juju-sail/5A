@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { RandomCounterComponent } from './random-counter.component';
+import {RandomCounterComponent} from './random-counter.component';
 
 describe('RandomCounterComponent', () => {
   let component: RandomCounterComponent;
@@ -8,9 +8,9 @@ describe('RandomCounterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RandomCounterComponent ]
+      declarations: [RandomCounterComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(RandomCounterComponent);
     component = fixture.componentInstance;

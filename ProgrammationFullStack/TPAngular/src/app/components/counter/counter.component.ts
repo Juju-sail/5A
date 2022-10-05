@@ -8,7 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class CounterComponent implements OnInit {
 
   @Input()
-  public valeurCompteurFils: number =0;
+  public valeurCompteurFils: number = 0;
 
   @Output('increment')
   public incrementEvent: EventEmitter<void> = new EventEmitter<void>();
@@ -16,18 +16,19 @@ export class CounterComponent implements OnInit {
   @Output('decrement')
   public decrementEvent: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  public incrementCounter(): void{
+  public incrementCounter(): void {
     this.incrementEvent.emit();
   }
-  public decrementCounter(): void{
+
+  public decrementCounter(): void {
     this.decrementEvent.emit();
   }
-
 
 
 }

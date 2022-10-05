@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CounterResetComponent } from './counter-reset.component';
+import {CounterResetComponent} from './counter-reset.component';
 
 describe('CounterResetComponent', () => {
   let component: CounterResetComponent;
@@ -8,9 +8,9 @@ describe('CounterResetComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CounterResetComponent ]
+      declarations: [CounterResetComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CounterResetComponent);
     component = fixture.componentInstance;

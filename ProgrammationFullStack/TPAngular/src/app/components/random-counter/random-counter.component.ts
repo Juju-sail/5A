@@ -7,17 +7,18 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class RandomCounterComponent implements OnInit {
   @Input()
-  public valeurCompteur: number =0;
+  public valeurCompteur: number = 0;
 
   @Output('valeurCompteurChange')
   public valeurCompteurChangeEvent: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  public setCounterToRandom(): void{
+  public setCounterToRandom(): void {
     this.valeurCompteur = Math.random() * 100;
     this.valeurCompteurChangeEvent.emit(this.valeurCompteur);
   }

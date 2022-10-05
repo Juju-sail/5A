@@ -1,0 +1,11 @@
+<h1>Formulaire</h1>
+
+<form #myForm="ngForm" (ngSubmit)="mySubmitFonction(myForm)">
+
+  <input name="monNom" #nom="ngModel" [(ngModel)]="nomVariable" required>
+
+  <span class="error" *ngIf="! nom.valid && nom.errors?.['required']">Ce champs est requis</span>
+
+  <button type="submit">Valider</button>
+
+</form>

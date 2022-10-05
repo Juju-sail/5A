@@ -10,13 +10,14 @@ export class CounterResetComponent implements OnInit {
   @Output('reset')
   public resetEvent: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-    public reset(): void{
-      this.resetEvent.emit(0);
+  public reset(): void {
+    this.resetEvent.emit(0);
 
-    }
+  }
 }

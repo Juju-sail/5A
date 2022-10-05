@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,11 +10,15 @@ export class AppComponent {
   constructor(private router: Router) {
   }
 
-  public navigateToLivres(){
+  public navigateToLivres() {
     this.router.navigate(['/livres'])
   }
 
-  public navigateToHome(){
+  public navigateToHome() {
     this.router.navigate([''])
+  }
+
+  public navigateToForm() {
+    this.router.navigate(['/form'])
   }
 }
