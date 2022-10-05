@@ -22,7 +22,7 @@ export class RestaurantComponent implements OnInit {
   }
 
   public createRestaurant(restaurant: RestaurantFormContent): void {
-    this.restaurantService.createRestaurant(restaurant.nom).subscribe({
+    this.restaurantService.createRestaurant(restaurant.nom, restaurant.adress).subscribe({
       next: value => this.restaurants.push(value)
     })
   }

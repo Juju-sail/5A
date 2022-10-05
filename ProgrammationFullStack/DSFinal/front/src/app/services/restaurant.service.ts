@@ -16,7 +16,7 @@ export class RestaurantService {
     return this.httpClient.get<Restaurant[]>('http://localhost:8080/restaurants');
   }
 
-  public createRestaurant(nom: string): Observable<Restaurant> {
-    return this.httpClient.post<Restaurant>('http://localhost:8080/restaurants', {nom: nom})
+  public createRestaurant(nom: string, adresse: string): Observable<Restaurant> {
+    return this.httpClient.post<Restaurant>('http://localhost:8080/restaurants', {nom: nom, adresse: adresse})
   }
 }
