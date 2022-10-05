@@ -1,22 +1,29 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { RestaurantComponent } from './components/restaurant/restaurant.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {RestaurantComponent} from './components/restaurant/restaurant.component';
 import {HttpClientModule} from "@angular/common/http";
+import {RestaurantTableComponent} from './components/restaurant-table/restaurant-table.component';
+import {RestaurantFormComponent} from './components/restaurant-form/restaurant-form.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    RestaurantTableComponent,
+    RestaurantFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

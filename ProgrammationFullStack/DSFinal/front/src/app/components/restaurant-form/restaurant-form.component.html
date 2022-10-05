@@ -1,0 +1,16 @@
+<form #form="ngForm" (ngSubmit)="save(form)">
+  <div>
+    Nom :
+    <input type="text" name="nom" #nom="ngModel" [(ngModel)]="nomInput" maxlength="30" minlength="1" required>
+    <span style="color: red" *ngIf="!nom.valid && nom.errors?.['required']">Le champs est requis</span>
+    <span style="color: red" *ngIf="!nom.valid && nom.errors?.['maxlength']">Le champs est trop long</span>
+    <!-- <span style="color: red" *ngIf="!nom.valid && nom.errors?.['minlength']">Le champs est trop court</span> -->
+
+  </div>
+  <div>
+    Adresse :
+    <input type="text" name="adress" #adress="ngModel" [(ngModel)]="adressInput" >
+  </div>
+
+  <button type="submit">Valider</button>
+</form>

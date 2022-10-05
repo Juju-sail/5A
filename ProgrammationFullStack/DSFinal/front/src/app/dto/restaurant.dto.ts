@@ -1,4 +1,4 @@
-export interface Restaurant{
+export interface Restaurant {
   nom: string;
   adresse: string;
   moyenne: number;

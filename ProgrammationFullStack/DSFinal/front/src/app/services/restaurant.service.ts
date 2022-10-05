@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Restaurant} from "../dto/restaurant.dto";
@@ -12,7 +12,11 @@ export class RestaurantService {
 
   }
 
-  public getRestaurant(): Observable<Restaurant[]>{
+  public getRestaurant(): Observable<Restaurant[]> {
     return this.httpClient.get<Restaurant[]>('http://localhost:8080/restaurants');
+  }
+
+  public createRestaurant(nom: string): Observable<Restaurant> {
+    return this.httpClient.post<Restaurant>('http://localhost:8080/restaurants', {nom: nom})
   }
 }

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Restaurant} from "../../dto/restaurant.dto";
+import {RestaurantService} from "../../services/restaurant.service";
+import {RestaurantFormContent} from "../restaurant-form/restaurant-form.component";
 
 @Component({
   selector: 'app-restaurant',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantComponent implements OnInit {
 
-  constructor() { }
+  public restaurants: Restaurant[] = [];
 
-  ngOnInit(): void {
+  constructor(private restaurantService: RestaurantService) {
+  }
+
+  public ngOnInit(): void {
+    this.restaurantService.getRestaurant().subscribe({
+      next: restaurants => this.restaurants = restaurants
+    })
+  }
+
+  public createRestaurant(restaurant: RestaurantFormContent): void {
+    this.restaurantService.createRestaurant(restaurant.nom).subscribe({
+      next: value => this.restaurants.push(value)
+    })
   }
 
 }
