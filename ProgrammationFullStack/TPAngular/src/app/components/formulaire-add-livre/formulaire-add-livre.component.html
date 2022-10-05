@@ -2,9 +2,12 @@
 
 <form #myForm="ngForm" (ngSubmit)="mySubmitFonction(myForm)">
 
-  <input name="monNom" #nom="ngModel" [(ngModel)]="nomVariable" required>
+  <input name="monNom" #nom="ngModel" [(ngModel)]="nomVariable" maxlength="0" required>
 
   <span class="error" *ngIf="! nom.valid && nom.errors?.['required']">Ce champs est requis</span>
+  <span class="error" *ngIf="! nom.valid && nom.errors?.['maxlengh']">trop long</span>
+
+
 
   <button type="submit">Valider</button>
 

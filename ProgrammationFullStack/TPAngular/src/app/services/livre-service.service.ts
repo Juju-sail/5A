@@ -19,7 +19,8 @@ export class LivreServiceService {
     return this.httpClient.get<Livre[]>('http://localhost:8080/livres')
   }
 
-  public addLivre(titre: "titre"): void {
+  public addLivre(titre: string): Observable<Livre> {
+    return this.httpClient.post<Livre>('http://localhost:8080/livres', {titre: titre});
     // Ajout d'un livre dans la bdd
     // Methode appelée par le form
   }
