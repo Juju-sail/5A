@@ -8,13 +8,15 @@ import {HttpClientModule} from "@angular/common/http";
 import {RestaurantTableComponent} from './components/restaurant-table/restaurant-table.component';
 import {RestaurantFormComponent} from './components/restaurant-form/restaurant-form.component';
 import {FormsModule} from "@angular/forms";
+import {EvaluationComponent} from './components/evaluation/evaluation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantComponent,
     RestaurantTableComponent,
-    RestaurantFormComponent
+    RestaurantFormComponent,
+    EvaluationComponent
   ],
   imports: [
     BrowserModule,
