@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {NgForm} from "@angular/forms";
+import {EvaluationComponent} from "../evaluation/evaluation.component";
 
 @Component({
   selector: 'app-restaurant-form',
@@ -10,6 +11,8 @@ export class RestaurantFormComponent implements OnInit {
 
   public nomInput: string = "";
   public adressInput: string = "";
+  public nbEtoiles: number = 0;
+  public evaluations: EvaluationComponent[] = [];
 
   @Output()
   public restaurantCreated: EventEmitter<RestaurantFormContent> = new EventEmitter();
@@ -25,7 +28,9 @@ export class RestaurantFormComponent implements OnInit {
       console.log("resto valid")
       this.restaurantCreated.emit({
         nom: this.nomInput,
-        adress: this.adressInput
+        adress: this.adressInput,
+        nbEtoiles: this.nbEtoiles,
+        evaluations: this.evaluations
       });
     }
   }
@@ -35,4 +40,6 @@ export class RestaurantFormComponent implements OnInit {
 export interface RestaurantFormContent {
   nom: string;
   adress: string;
+  nbEtoiles: number;
+  evaluations: EvaluationComponent[];
 }

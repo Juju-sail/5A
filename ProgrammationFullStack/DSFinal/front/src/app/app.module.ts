@@ -9,6 +9,7 @@ import {RestaurantTableComponent} from './components/restaurant-table/restaurant
 import {RestaurantFormComponent} from './components/restaurant-form/restaurant-form.component';
 import {FormsModule} from "@angular/forms";
 import {EvaluationComponent} from './components/evaluation/evaluation.component';
+import { DetailRestaurantComponent } from './components/detail-restaurant/detail-restaurant.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {EvaluationComponent} from './components/evaluation/evaluation.component'
     RestaurantComponent,
     RestaurantTableComponent,
     RestaurantFormComponent,
-    EvaluationComponent
+    EvaluationComponent,
+    DetailRestaurantComponent
   ],
   imports: [
     BrowserModule,
