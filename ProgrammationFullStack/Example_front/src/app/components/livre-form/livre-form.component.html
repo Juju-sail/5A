@@ -1,0 +1,15 @@
+<form #form="ngForm" (ngSubmit)="save(form)">
+  <div>
+    Titre :
+    <input type="text" name="titre" #titre="ngModel" [(ngModel)]="titreInput" maxlength="10" required>
+    <span style="color: red" *ngIf="!titre.valid && titre.errors?.['required']">Le champs est requis</span>
+    <span style="color: red" *ngIf="!titre.valid && titre.errors?.['maxlength']">Le champs est trop long</span>
+  </div>
+  <div>
+    Auteur :
+    <input type="text" name="auteur" #auteur="ngModel" [(ngModel)]="auteurInput" maxlength="10" required>
+    <span style="color: red" *ngIf="!auteur.valid && auteur.errors?.['required']">Le champs est requis</span>
+    <span style="color: red" *ngIf="!auteur.valid && auteur.errors?.['maxlength']">Le champs est trop long</span>
+  </div>
+  <button type="submit">Valider</button>
+</form>
