@@ -1,8 +1,10 @@
 <table>
   <tr>
     <th>Nom de l'enseigne</th>
+    <th>Adresse de l'enseigne</th>
   </tr>
   <tr *ngFor="let resto of restaurants">
     <td>{{resto.nom}}</td>
+    <td>{{resto.adresse}}</td>
   </tr>
 </table>
