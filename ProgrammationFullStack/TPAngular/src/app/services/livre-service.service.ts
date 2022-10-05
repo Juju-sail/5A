@@ -19,7 +19,8 @@ export class LivreServiceService {
     return this.httpClient.get<Livre[]>('http://localhost:8080/livres')
   }
 
-  //public addLivre(titre: "titre"): {
-
-  //}
+  public addLivre(titre: "titre"): void {
+    // Ajout d'un livre dans la bdd
+    // Methode appelée par le form
+  }
 }
