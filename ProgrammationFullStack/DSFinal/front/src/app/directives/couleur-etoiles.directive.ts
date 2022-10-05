@@ -9,12 +9,12 @@ export class CouleurEtoilesDirective {
   set index(index: string) {
 
     if (parseInt(index) > 2) {
-      this._renderer.setStyle(this._el.nativeElement, 'color', 'yellow')
+      this._renderer.setStyle(this._el.nativeElement, 'background-color', 'yellow')
     } else {
       if (parseInt(index) < 1 && parseInt(index) > 0) {
-        this._renderer.setStyle(this._el.nativeElement, 'color', 'red')
+        this._renderer.setStyle(this._el.nativeElement, 'background-color', 'red')
       } else {
-        this._renderer.setStyle(this._el.nativeElement, 'color', 'black')
+        this._renderer.setStyle(this._el.nativeElement, 'background-color', 'black')
       }
     }
 
