@@ -1,5 +1,4 @@
-import {Component} from '@angular/core';
-import {Router} from "@angular/router";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +6,5 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private router: Router) {
-  }
-
-  public navigateToLivres() {
-    this.router.navigate(['/livres'])
-  }
-
-  public navigateToHome() {
-    this.router.navigate([''])
-  }
-
-  public navigateToForm() {
-    this.router.navigate(['/form'])
-  }
+  title = 'DSAngular';
 }
