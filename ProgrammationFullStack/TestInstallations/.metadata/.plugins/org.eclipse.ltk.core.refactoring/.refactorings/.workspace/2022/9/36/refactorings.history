@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;fs-back/src/main/java/fr/polytech/fsback/Livres.java&apos;" deleteContents="false" description="Delete resource &apos;fs-back/src/main/java/fr/polytech/fsback/Livres.java&apos;" element1="/fs-back/src/main/java/fr/polytech/fsback/Livres.java" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1662555716236"/>
-</session>
