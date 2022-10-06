@@ -4,6 +4,7 @@ import math
 from sklearn import svm
 
 
+
 #### programme principal à implémenter dans cette fonction ####
 def monprogramme(Xapp, Yapp, C):
 	"""
@@ -70,7 +71,8 @@ def monprogrammeNL(Xapp, Yapp, C, sigma):
 	print("Apprentissage lancé avec " + str(len(Xapp)) + " points, C = ", C, " et sigma = ", sigma )
 
 	# à compléter pour apprendre le modèle SVM non linéaire...
-	svm2d = svm.SVC(C = math.inf, kernel= 'rbf', gamma=1/(2*sigma**2))
+	
+	svm2d = svm.SVC(C = C, kernel= 'rbf', gamma=1/(2*sigma**2))
 	svm2d.fit(Xapp, Yapp)
 	
 	# création d'une grille de points de test
@@ -86,6 +88,9 @@ def monprogrammeNL(Xapp, Yapp, C, sigma):
 	Ypred = svm2d.predict(Xtest)
 	
 	# ... et tracer le résultat 
+	g = svm2d.decision_function(Xtest)
+	plt.scatter(Xtest[:, 0], Xtest[:, 1], c=g, cmap="seismic", alpha=0.2)
+
 	XtestAbRouge = Xtest[Ypred == 2, 0]
 	XtestOrdRouge = Xtest[Ypred == 2, 1]
 	plt.plot(XtestAbRouge, XtestOrdRouge, 'or', alpha = 0.2)
@@ -95,7 +100,7 @@ def monprogrammeNL(Xapp, Yapp, C, sigma):
 	plt.plot(XtestAbBleu, XtestOrdBleu, 'ob', alpha = 0.2)
 
 	# afficher le nombre de vecteurs support...	
-
+	
 	
 	
 	# pour réellement mettre à jour le graphique: 
@@ -185,6 +190,6 @@ print("\n ESPACE pour lancer la fonction monprogramme(Xapp,Yapp,C)")
 print("    avec la valeur de C modifiée par +/-") 
 print("\n N pour lancer la fonction monprogrammeNL(Xapp,Yapp,C,sigma)")
 print("    avec la valeur de C modifiée par +/-")
-print("    et celle de sigma modifiée par CTRL +/-\n\n") 
+print("    et celle de sigma modifiée par ALT +/-\n\n") 
 
 plt.show()
