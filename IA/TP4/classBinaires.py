@@ -31,6 +31,7 @@ for i in range(4):
 
     # On calcul l'erreur de chacun de nos 4 models
     Err = np.mean(Ypred != yi)*100
+    print("Erreur modele classification binaire", i, " :")
     print(Err)
 
     # On transforme nos 4 models en 1, on les combine :
@@ -41,21 +42,30 @@ ypred = []
 ypred.append(np.argmax(G, axis=1) + 1)
 
 # Et son erreur
+print("Erreur modele combinaison des classifieurs binaire :")
 Err = np.mean(ypred != y)*100
 print(Err)
 
 # LOO :
-Gbis = np.zeros((139,4))
+print("Modele multiclass par validation croisée (LOO)")
+Erreur = 0
 for i in range(140):
     X_i = np.delete(X, i, axis=0)
     y_i = np.delete(y, i)
-
+    
+    Gbis = np.zeros(4)
     for j in range(4):
         yi = 2*(y_i==(j+1))-1
         svmtab[j].fit(X_i, yi)
         yPrevision = svmtab[j].predict(X_i)
-        Gbis[:,j] = svmtab[j].decision_function([X[i,:]])
-        Err = np.mean(yPrevision != yi)*100
-Erreur = np.mean(Err)
-print(Erreur)   
-# A modif des que possible
+        Gbis[j] = svmtab[j].decision_function([X[i,:]])
+    fx = np.argmax(Gbis) + 1
+    Err = fx != y[i]
+    Erreur += Err
+
+monErreur = Erreur/140 * 100
+print("Erreur de validation croisée :")
+print(monErreur)
+
+# On peut maintenant faire tourner cet algo pour differentes valeurs de C
+# Puis on choisi le meilleur C et on refait l'algo sur (X,Y) (on applique notre model)
