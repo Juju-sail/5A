@@ -46,26 +46,50 @@ print("Erreur modele combinaison des classifieurs binaire :")
 Err = np.mean(ypred != y)*100
 print(Err)
 
-# LOO :
 print("Modele multiclass par validation croisée (LOO)")
-Erreur = 0
-for i in range(140):
-    X_i = np.delete(X, i, axis=0)
-    y_i = np.delete(y, i)
-    
-    Gbis = np.zeros(4)
-    for j in range(4):
-        yi = 2*(y_i==(j+1))-1
-        svmtab[j].fit(X_i, yi)
-        yPrevision = svmtab[j].predict(X_i)
-        Gbis[j] = svmtab[j].decision_function([X[i,:]])
-    fx = np.argmax(Gbis) + 1
-    Err = fx != y[i]
-    Erreur += Err
 
-monErreur = Erreur/140 * 100
-print("Erreur de validation croisée :")
-print(monErreur)
+def loo(X,y,svmtab):
+    Erreur = 0
+    for i in range(140):
+        X_i = np.delete(X, i, axis=0)
+        y_i = np.delete(y, i)
+        
+        Gbis = np.zeros(4)
+        for j in range(4):
+            yi = 2*(y_i==(j+1))-1
+            svmtab[j].fit(X_i, yi)
+            yPrevision = svmtab[j].predict(X_i)
+            Gbis[j] = svmtab[j].decision_function([X[i,:]])
+        fx = np.argmax(Gbis) + 1
+        Err = fx != y[i]
+        Erreur += Err
+
+    monErreur = Erreur/140 * 100
+    # print("Erreur de validation croisée :")
+    # print(monErreur)
+    return monErreur
+
+
+# LOO :
+loo(X,y, svmtab)
 
 # On peut maintenant faire tourner cet algo pour differentes valeurs de C
 # Puis on choisi le meilleur C et on refait l'algo sur (X,Y) (on applique notre model)
+
+mistakes = []
+mesC = [0.01,0.1,1,5,10,100]
+for c in mesC:
+    svm1 = svm.LinearSVC(C=c, max_iter=100000)
+    svm2 = svm.LinearSVC(C=c, max_iter=100000)
+    svm3 = svm.LinearSVC(C=c, max_iter=100000)
+    svm4 = svm.LinearSVC(C=c, max_iter=100000)
+
+    svmtabLoo = [svm1, svm2, svm3, svm4]
+    # print("pour C =", c)
+    mistakes.append(loo(X,y,svmtabLoo))
+
+print("Le meilleur C est : ")
+print(mesC[mistakes.index(min(mistakes))])
+
+# Il faut maintenant calculer l'erreur de modele avec le bon C !
+# Bon, du coup je ne le fait pas, car on a pas d'autres données... Il faut totalement modifier les boucles (cf photo au 07/10)
