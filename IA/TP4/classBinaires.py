@@ -65,8 +65,8 @@ def loo(X,y,svmtab):
         Erreur += Err
 
     monErreur = Erreur/140 * 100
-    # print("Erreur de validation croisée :")
-    # print(monErreur)
+    print("Erreur de validation croisée :")
+    print(monErreur)
     return monErreur
 
 
@@ -85,7 +85,7 @@ for c in mesC:
     svm4 = svm.LinearSVC(C=c, max_iter=100000)
 
     svmtabLoo = [svm1, svm2, svm3, svm4]
-    # print("pour C =", c)
+    print("pour C =", c)
     mistakes.append(loo(X,y,svmtabLoo))
 
 print("Le meilleur C est : ")
