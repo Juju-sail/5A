@@ -29,6 +29,38 @@ PARI_router(config-router)# network 15.0.3.0/24 area 0
 PARI_router(config-router)# network 179.0.41.2/24 area 0
 PARI_router(config-router)# exit
 
+### eBGP
+
+MIAM_router# conf t
+MIAM_router(config)# router bgp 15
+MIAM_router(config-router)# address-family ipv4 unicast
+MIAM_router(config-router-af)# neighbor 15.151.0.1 next-hop-self
+
+MIAM_router(config-router-af)#neighbor 15.151.0.1 next-hop-self
+
+MIAM_router(config-router-af)#neighbor 15.152.0.1 next-hop-self
+
+MIAM_router(config-router-af)#neighbor 15.153.0.1 next-hop-self
+MIAM_router(config-router-af)#neighbor 15.154.0.1 next-hop-self
+MIAM_router(config-router-af)#neighbor 15.155.0.1 next-hop-self
+MIAM_router(config-router-af)#neighbor 15.156.0.1 next-hop-self
+MIAM_router(config-router-af)#neighbor 15.157.0.1 next-hop-self
+MIAM_router(config-router-af)#neighbor 15.158.0.1 next-hop-self
+
+
+
+On a verifier tout ça grace à looking_glass :
+
+![image-20221121164046703](C:\Users\julie\AppData\Roaming\Typora\typora-user-images\image-20221121164046703.png)
+
+pour joindre le 11, on passe par le 13
+
+pour joindre le 12, on passe soit par 13, soit 14
+
+le lien avec 13 est direct
+
+c'est cohérent avec le schémas
+
 ## Config d'un switch
 
 ...
