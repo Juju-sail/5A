@@ -1,0 +1,29 @@
+volumes:
+  postgres:
+
+networks:
+  backend:
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: pg
+    volumes:
+      - postgres:/var/lib/postgresql/data:rw
+    networks:
+      - backend
+    environment:
+      - POSTGRES_DB=myDatabase
+      - POSTGRES_USER=databaseUser
+      - POSTGRES_PASSWORD=databasePassword
+  backend:
+    image: projet
+    container_name: backend
+    networks:
+      - backend
+    environment:
+      - SPRING_DATASOURCE_URL="jdbc:postgresql://pg/myDatabase"
+      - SPRING_DATASOURCE_USERNAME=databaseUser
+      - SPRING_DATASOURCE_PASSWORD=databasePassword
+    ports:
+      - 8080:8080

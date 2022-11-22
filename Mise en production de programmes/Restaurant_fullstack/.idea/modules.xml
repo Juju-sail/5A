@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/LienFullStack.iml" filepath="$PROJECT_DIR$/.idea/LienFullStack.iml" />
+      <module fileurl="file://$PROJECT_DIR$/back-main/back-main/fs-back.iml" filepath="$PROJECT_DIR$/back-main/back-main/fs-back.iml" />
+    </modules>
+  </component>
+</project>
