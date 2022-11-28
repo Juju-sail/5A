@@ -61,6 +61,23 @@ le lien avec 13 est direct
 
 c'est cohérent avec le schémas
 
+
+
+### Route-map
+
+PARI_router# conf t
+PARI_router(config)# ip prefix-list PREFIXEPERMITED-LIST permit 15.0.0.0/8
+PARI_router(config)# ip prefix-list PREFIXEPERMITED-LIST permit 17.0.0.0/8
+PARI_router(config)# ip prefix-list PREFIXEPERMITED-LIST permit 18.0.0.0/8
+PARI_router(config)# route-map PREFIXPERMITED permit 10
+PARI_router(config-route-map)# match ip address prefix-list PREFIXEPERMITED-LIST
+PARI_router(config-route-map)# exit
+PARI_router(config)# router bgp 15
+PARI_router(config-router)# neighbor 179.0.41.2 route-map PREFIXPERMITED out
+PARI_router(config-router)# exit
+PARI_router(config)# exit
+PARI_router# show ip bgp neighbors 179.0.41.2 advertised-routes
+
 ## Config d'un switch
 
 ...
