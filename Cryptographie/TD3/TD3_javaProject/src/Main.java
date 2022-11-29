@@ -12,5 +12,8 @@ public class Main {
         System.out.println(nb1 + " puissance " + nb3 + " modulo " + nb2 + " = " + fct.puissanceMod(nb1, nb2, nb3));
         System.out.println("generation BigInteger : " + fct.randomBigInt());
         System.out.println("pgcd de " + nb1 + " et " + nb2 + " : " + fct.pgcd(nb1, nb2));
+        System.out.println("euclide etendu de " + nb1 + " et " + nb2 + " : [" + fct.extendedEuclid(nb1, nb2)[0] + ", " + fct.extendedEuclid(nb1, nb2)[1] + ", "+ fct.extendedEuclid(nb1, nb2)[2] + "]");
+        System.out.println("inverse de " + nb1 + " modulo " + nb2 + " : " + fct.inverseMod(nb1, nb2));
+        System.out.println("sur 5 test, on considère que " + nb1 + " est premier : " + fct.isPseudoPrime(nb1));
     }
 }

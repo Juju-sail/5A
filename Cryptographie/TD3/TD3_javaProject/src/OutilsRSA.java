@@ -58,7 +58,7 @@ public class OutilsRSA {
 		 return result;
 	 }
 
-	 public static BigInteger[] extendedEculid(BigInteger a, BigInteger b) {
+	 public static BigInteger[] extendedEuclid(BigInteger a, BigInteger b) {
 		 BigInteger[] result = new BigInteger[3];
 		 if(b.compareTo(BigInteger.ZERO)==0) {
 			 result[0]=a;
@@ -66,17 +66,41 @@ public class OutilsRSA {
 			 result[2]=BigInteger.ZERO;
 		 }
 		 else {
-			 //à compléter
+			 BigInteger abis = mod(a, b);
+			 result = extendedEuclid(b, abis);
+			 BigInteger saveU = result[1];
+			 BigInteger saveV = result[2];
+			 result[1] = saveV;
+			 result[2] = saveU.subtract(a.divide(b).multiply(saveV));
 		 }
 		 return result;
 	 }
+
 	 
 	 public static BigInteger inverseMod(BigInteger a, BigInteger b) {
-		 return BigInteger.ZERO; //Placeholder à compléter
+		 BigInteger[] result = extendedEuclid(a, b);
+		 if(result[0].compareTo(BigInteger.ONE) == 0){
+			return mod(result[1], b);
+		 }
+		 return BigInteger.ZERO;
 	 }
 	 
-	 public static Boolean isPseudoPrime(BigInteger a) {
-		 return false; //Placeholder à compléter
+	 public static Boolean isPseudoPrime(BigInteger n) {
+		 int count = 0;
+		 for (int i = 0; i<5; i++){
+			 BigInteger a = randomBigInt();
+			 BigInteger bigA = puissanceMod(a,n.subtract(BigInteger.ONE),n);
+			 BigInteger egalite = mod(bigA, n);
+			 // System.out.println(egalite); //debug
+			 if (egalite.compareTo(BigInteger.ONE) == 0){
+				 count ++;
+			 }
+		 }
+		 // System.out.println(count); //debug
+		 if(count == 5){
+			 return true;
+		 }
+		 else return false;
 	 }
 	 
 	 public static BigInteger inverseModPrime(BigInteger a, BigInteger b) {
