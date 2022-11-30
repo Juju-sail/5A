@@ -11,7 +11,7 @@ FROM nginx
 EXPOSE 80
 ENV BACKEND_URL_ENV_VAR=localhost
 
-COPY nginx/ /etc/ngix/
+COPY nginx/ /etc/nginx/
 COPY sed.sh /docker-entrypoint.d/sed.sh
 RUN chmod +x /docker-entrypoint.d/sed.sh
 
