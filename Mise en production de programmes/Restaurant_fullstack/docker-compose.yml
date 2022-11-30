@@ -18,12 +18,25 @@ services:
       - POSTGRES_PASSWORD=databasePassword
   backend:
     image: projet
+    build: ./back-main
     container_name: backend
     networks:
       - backend
     environment:
-      - SPRING_DATASOURCE_URL="jdbc:postgresql://pg/myDatabase"
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://pg:5432/myDatabase
       - SPRING_DATASOURCE_USERNAME=databaseUser
       - SPRING_DATASOURCE_PASSWORD=databasePassword
     ports:
       - 8080:8080
+    depends_on:
+      - postgres
+  frontend:
+    image: projet_front
+    build: ./front-main
+    container_name: frontend
+    environment:
+      - BACKEND_URL_ENV_VAR=http://localhost:8080
+    ports:
+      - 4200:80
+    depends_on:
+      - backend
