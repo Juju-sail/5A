@@ -1,0 +1,8 @@
+16/ Un docker est un logiciel qui permet d'exécuter des applications dans des conteneurs isolés. Cela nous permet de virtualiser des applications de façon légère et sûre d'execution (si la mise en production était bonne)
+
+17/ La CI (Continuous Integration) et la CD (Continuous Deployment) permettent d'aller plus vite lors de la mise en production d'une application.
+CI : on fait plusieurs tests au fur et à mesure de la mise en production
+CD : on automatise le déploiement
+
+18/ J'ai vraiment aimé que le cours soit dans la continuité de celui d'Antoine. Je ne suis pas sûre d'avoir beaucoup retenue d'informations purement issues des CM, mais les TP on été très instructifs.
+19/ Je ne souhaite pas vous surprendre
