@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="300">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Width="230" Height="60" VerticalAlignment="Top" x:Name="Result" Text=""></TextBlock>
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top"  Width="70" Height="60" Click="Calcul">=</Button>
+        <TextBlock HorizontalAlignment="Left" Width="230" Height="60" VerticalAlignment="Top" x:Name="Result" FontWeight="Bold" Text=""></TextBlock>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top"  Width="70" Height="60" FontWeight="Bold" Click="Calcul">=</Button>
 
         <Grid Margin="0,60,0,0">
             <Grid.ColumnDefinitions>
@@ -23,29 +23,29 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Grid.Column="0" Background ="LightSalmon" Click="Generate7">7</Button>
-            <Button Grid.Row="0" Grid.Column="1" Background ="LightSalmon" Click="Generate8">8</Button>
-            <Button Grid.Row="0" Grid.Column="2" Background ="LightSalmon" Click="Generate9">9</Button>
+            <Button Grid.Row="0" Grid.Column="0" Background ="LightSalmon" FontWeight="Bold" Click="Generate7">7</Button>
+            <Button Grid.Row="0" Grid.Column="1" Background ="LightSalmon" FontWeight="Bold" Click="Generate8">8</Button>
+            <Button Grid.Row="0" Grid.Column="2" Background ="LightSalmon" FontWeight="Bold" Click="Generate9">9</Button>
 
-            <Button Grid.Row="0" Grid.Column="3" Click="sum">+</Button>
+            <Button Grid.Row="0" Grid.Column="3" FontWeight="Bold" Click="sum">+</Button>
 
-            <Button Grid.Row="1" Grid.Column="0" Background ="LightSalmon" Click="Generate4">4</Button>
-            <Button Grid.Row="1" Grid.Column="1" Background ="LightSalmon" Click="Generate5">5</Button>
-            <Button Grid.Row="1" Grid.Column="2" Background ="LightSalmon" Click="Generate6">6</Button>
+            <Button Grid.Row="1" Grid.Column="0" Background ="LightSalmon" FontWeight="Bold" Click="Generate4">4</Button>
+            <Button Grid.Row="1" Grid.Column="1" Background ="LightSalmon" FontWeight="Bold" Click="Generate5">5</Button>
+            <Button Grid.Row="1" Grid.Column="2" Background ="LightSalmon" FontWeight="Bold" Click="Generate6">6</Button>
 
-            <Button Grid.Row="1" Grid.Column="3" Click="substract">-</Button>
+            <Button Grid.Row="1" Grid.Column="3" FontWeight="Bold" Click="substract">-</Button>
 
-            <Button Grid.Row="2" Grid.Column="0" Background ="LightSalmon" Click="Generate1">1</Button>
-            <Button Grid.Row="2" Grid.Column="1" Background ="LightSalmon" Click="Generate2">2</Button>
-            <Button Grid.Row="2" Grid.Column="2" Background ="LightSalmon" Click="Generate3">3</Button>
+            <Button Grid.Row="2" Grid.Column="0" Background ="LightSalmon" FontWeight="Bold" Click="Generate1">1</Button>
+            <Button Grid.Row="2" Grid.Column="1" Background ="LightSalmon" FontWeight="Bold" Click="Generate2">2</Button>
+            <Button Grid.Row="2" Grid.Column="2" Background ="LightSalmon" FontWeight="Bold" Click="Generate3">3</Button>
 
-            <Button Grid.Row="2" Grid.Column="3" Click="multiply">*</Button>
+            <Button Grid.Row="2" Grid.Column="3" FontWeight="Bold" Click="multiply">*</Button>
 
             <Button Grid.Row="3" Grid.Column="0" Click="Reset">CE</Button>
-            <Button Grid.Row="3" Grid.Column="1" Background ="LightSalmon" Click="Generate0">0</Button>
+            <Button Grid.Row="3" Grid.Column="1" Background ="LightSalmon" FontWeight="Bold" Click="Generate0">0</Button>
             <Button Grid.Row="3" Grid.Column="2" Click="dell">dell</Button>
 
-            <Button Grid.Row="3" Grid.Column="3" Click="divide">/</Button>
+            <Button Grid.Row="3" Grid.Column="3" FontWeight="Bold" Click="divide">/</Button>
 
         </Grid>
     </Grid>
