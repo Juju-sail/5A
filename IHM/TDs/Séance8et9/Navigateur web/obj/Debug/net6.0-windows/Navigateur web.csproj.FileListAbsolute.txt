@@ -1,0 +1,29 @@
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.csproj.AssemblyReference.cache
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web_Content.g.cs
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web_MarkupCompile.cache
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web_MarkupCompile.lref
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\Navigateur web.exe
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\Navigateur web.deps.json
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\Navigateur web.runtimeconfig.json
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\Navigateur web.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\Navigateur web.pdb
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.g.resources
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.AssemblyInfoInputs.cache
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.AssemblyInfo.cs
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.csproj.CoreCompileInputs.cache
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.csproj.CopyComplete
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\refint\Navigateur web.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.pdb
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\Navigateur web.genruntimeconfig.cache
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\TDs\Séance8et9\Navigateur web\obj\Debug\net6.0-windows\ref\Navigateur web.dll

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8mZW+WzgJkfhuVGW2gOq56qwy5PKU0aRWHAb7XyUCyVoOcKFcwb3of7cM45Yj4w6LNYZswDH4j667N+rR++f7A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\TDs\\Séance8et9\\Navigateur web\\Navigateur web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\julie\\.nuget\\packages\\microsoft.web.webview2\\1.0.1518.46\\microsoft.web.webview2.1.0.1518.46.nupkg.sha512"
+  ],
+  "logs": []
+}
