@@ -10,19 +10,17 @@ namespace Navigateur_web
     
     internal class ModelView : INotifyPropertyChanged
     {
+        
+
         public event PropertyChangedEventHandler? PropertyChanged;
-        private String _currentURL = "default";
-        public String CurrentURL{
-            get { return _currentURL; }
-            set {
-            _currentURL= value;
-
-                if(PropertyChanged != null)
-                {
-                    PropertyChanged(this, new PropertyChangedEventArgs("CurrentURL"));
-
-                }
+        protected void OnPropertyChanged(string propertyURL)
+        {
+            // Déclenche l'évènement PropertyChanged.
+            if (PropertyChanged != null) // Si l'évènement a au moins un abonné
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyURL));
             }
         }
+
     }
 }

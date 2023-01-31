@@ -21,12 +21,12 @@ namespace Navigateur_web
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly ModelView _c;
+        private readonly ModelViewURL _c;
         public MainWindow()
         {
             InitializeComponent();
 
-            _c = new ModelView();
+            _c = new ModelViewURL();
             DataContext = _c;
         }
 
@@ -36,8 +36,13 @@ namespace Navigateur_web
         {
             if (webView != null && webView.CoreWebView2 != null)
             {
-                webView.CoreWebView2.Navigate(_c.CurrentURL);
+                webView.CoreWebView2.Navigate(_c.CurrentURL); // Recupère ce qui est tapé dans la barre d'adresse et s'y rend
             }
+        }
+
+        private void webView_NavigationCompleted(object sender, CoreWebView2NavigationCompletedEventArgs e) // Appel via .xaml : NavigationCompleted = "blabalba";
+        {
+            _c.CurrentURL = webView.Source.ToString(); // Va dans element webView et recupère l'element Source. (Et on le met dans la variable affichée dans ComboBox)
         }
     }
 }
