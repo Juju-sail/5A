@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formulaire", "Formulaire\Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulaire.ViewModel", "Formulaire.ViewModel\Formulaire.ViewModel.csproj", "{87AB2C8B-96E4-4F6F-86FC-C78D781CD8B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formulaire.Console", "Formulaire.Console\Formulaire.Console.csproj", "{C371D7BD-D3CD-4010-B7D4-B701AAD68D9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{87AB2C8B-96E4-4F6F-86FC-C78D781CD8B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87AB2C8B-96E4-4F6F-86FC-C78D781CD8B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87AB2C8B-96E4-4F6F-86FC-C78D781CD8B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C371D7BD-D3CD-4010-B7D4-B701AAD68D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C371D7BD-D3CD-4010-B7D4-B701AAD68D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C371D7BD-D3CD-4010-B7D4-B701AAD68D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C371D7BD-D3CD-4010-B7D4-B701AAD68D9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
