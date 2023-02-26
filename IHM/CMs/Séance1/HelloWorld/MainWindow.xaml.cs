@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,21 +38,47 @@ namespace HelloWorld
         }
     }
 
-    public class Contact
+    // WPF reconnaît l'interface INotifyPropertyChanged et s'abonne à l'évènement PropertyChanged
+    public class Contact : INotifyPropertyChanged
     {
-        public string Nom { get; set; } = string.Empty;
+        // Evènement déclenché lorsqu'une propriété change de valeur
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        // Equivalent :
-        //
-        // private string _nom = string.Empty;
-        // 
-        // public string Nom
-        // {
-        //     get { return _nom; }
-        //     set { _nom = value; }
-        // }
+        private string _nom = "Gogh";
+        
+        public string Nom
+        {
+            get { return _nom; }
+            set 
+            {
+                _nom = value;
 
-        public string Prenom { get; set; } = string.Empty;
+                // Déclenche l'évènement PropertyChanged.
+                if (PropertyChanged != null) // Si l'évènement a au moins un abonné
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("Nom"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("PrenomNom"));
+                }
+            }
+        }
+
+        private string _prenom = "Van";
+
+        public string Prenom
+        {
+            get { return _prenom; }
+            set
+            {
+                _prenom = value;
+
+                // Déclenche l'évènement PropertyChanged.
+                if (PropertyChanged != null) // Si l'évènement a au moins un abonné
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs("Prenom"));
+                    PropertyChanged(this, new PropertyChangedEventArgs("PrenomNom"));
+                }
+            }
+        }
 
         public string PrenomNom
         {

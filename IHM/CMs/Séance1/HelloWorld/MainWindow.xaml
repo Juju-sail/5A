@@ -11,9 +11,13 @@
         <TextBlock Text="Saisissez votre nom/prénom :" Margin="4" HorizontalAlignment="Center" />
         
         <!-- Liaison de données : la propriété Text lit et écrit une propriété (Nom, Prenom) sur DataContext -->
-        <TextBox Text="{Binding Nom}" Margin="4" Padding="4" />
-        <TextBox Text="{Binding Prenom}" Margin="4" Padding="4" />
-        
+        <!-- UpdateSourceTrigger=PropertyChanged : la synchronisation de données se fait pendant la frappe -->
+        <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
+        <TextBox Text="{Binding Prenom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
+
+        <TextBlock Text="{Binding PrenomNom}" Margin="4" />
+
         <Button Content="Valider" Margin="4" Padding="4" Click="Button_Click" />
+        
     </StackPanel>
 </Window>
