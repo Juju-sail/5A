@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simulateur"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="Simulateur" Height="450" Width="800">
+    <Canvas>
+        <Ellipse Fill="LightCoral" Width="64" Height="64"
+                 Canvas.Left="{Binding PositionX}" Canvas.Bottom="{Binding PositionY}" />
+    </Canvas>
 </Window>
