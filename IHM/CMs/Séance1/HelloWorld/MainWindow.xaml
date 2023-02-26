@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="Première application" Height="450" Width="800"
         Background="LightGoldenrodYellow">
-    <Canvas>
-        <TextBlock Canvas.Right="50" Canvas.Top="30" Text="Hello World!" Margin="4" />
-        <TextBox Canvas.Top="40" Canvas.Left="60" x:Name="_nomTb" Margin="4" Padding="4" />
-        <Button Canvas.Bottom="100" Canvas.Left="30" Content="Ok" Margin="4" Padding="4" Click="Button_Click" />
-    </Canvas>
+    <StackPanel VerticalAlignment="Center">
+        <Border Background="AliceBlue" BorderThickness="2" BorderBrush="LightBlue" CornerRadius="8" Margin="4">
+            <TextBlock Text="Hello World!" Margin="4" />
+        </Border>
+        <TextBox x:Name="_nomTb" Margin="4" Padding="4" />
+        <Button Content="Ok" Margin="4" Padding="4" Click="Button_Click" />
+    </StackPanel>
 </Window>
