@@ -6,8 +6,29 @@
         xmlns:local="clr-namespace:Simulateur"
         mc:Ignorable="d"
         Title="Simulateur" Height="450" Width="800">
-    <Canvas>
-        <Ellipse Fill="LightCoral" Width="64" Height="64"
-                 Canvas.Left="{Binding PositionX}" Canvas.Bottom="{Binding PositionY}" />
-    </Canvas>
+    <ItemsControl ItemsSource="{Binding}">
+
+        <!-- Panneau contenant les éléments -->
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <Canvas IsItemsHost="True" />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+
+        <!-- Configure le composant ContentPresenter qui encapule chaque élément affiché -->
+        <ItemsControl.ItemContainerStyle>
+            <Style>
+                <Setter Property="Canvas.Left" Value="{Binding PositionX}" />
+                <Setter Property="Canvas.Bottom" Value="{Binding PositionY}" />
+            </Style>
+        </ItemsControl.ItemContainerStyle>
+
+        <!-- Affichage d'un élément -->
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <Ellipse Fill="LightCoral" Width="64" Height="64" />
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+
+    </ItemsControl>
 </Window>

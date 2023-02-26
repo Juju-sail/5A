@@ -20,8 +20,8 @@ namespace Simulateur
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly BallViewModel _ball;
-        private               TimeSpan _lastRenderingTime; // TimeSpan représente une durée.
+        private readonly BallViewModel[] _balls;
+        private                 TimeSpan _lastRenderingTime; // TimeSpan représente une durée.
 
         public MainWindow()
         {
@@ -30,8 +30,13 @@ namespace Simulateur
             _lastRenderingTime = TimeSpan.Zero;
             CompositionTarget.Rendering += CompositionTarget_Rendering;
 
-            _ball = new BallViewModel(100, 400);
-            DataContext = _ball;
+            _balls = new BallViewModel[]
+            {
+                new BallViewModel(100, 400),
+                new BallViewModel(300, 200),
+                new BallViewModel(500, 300)
+            };
+            DataContext = _balls;
         }
 
         // Déclenché à chaque rafraîchissement de la fenêtre (60 Hz)
@@ -47,7 +52,10 @@ namespace Simulateur
                 double freq = 1.0 / delta.TotalSeconds;
                 Title = $"{freq} Hz";
 
-                _ball.Update(delta);
+                foreach (BallViewModel b in _balls)
+                {
+                    b.Update(delta);
+                }
             }
 
             _lastRenderingTime = args.RenderingTime;
