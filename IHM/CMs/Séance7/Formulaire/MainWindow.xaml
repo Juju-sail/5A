@@ -19,7 +19,15 @@
 
         </StackPanel>
         <ListBox x:Name="_lb" Margin="4">
-            
+            <!-- Modèle d'affichage de chaque élément de la liste -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="2">
+                        <TextBlock Text="{Binding Nom}" FontWeight="Bold" Margin="2" />
+                        <TextBlock Text="{Binding Prenom}" Margin="2" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
     </DockPanel>
 </Window>
