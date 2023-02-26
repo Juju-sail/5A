@@ -7,15 +7,15 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="View\EditControl.xaml.cs">
+    <Compile Update="EditControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="View\EditControl.xaml">
+    <Page Update="EditControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\MainWindow.xaml">
+    <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
