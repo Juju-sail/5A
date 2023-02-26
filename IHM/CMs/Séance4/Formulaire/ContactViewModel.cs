@@ -4,24 +4,30 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Formulaire
 {
     public class ContactViewModel : ViewModelBase
     {
-        private readonly Contact _model;
+        private readonly IView _view;
 
-        public ContactViewModel()
+        private string _nom    = "Gogh";
+        private string _prenom = "Van";
+
+        // La vue, qui instancie la vue-modèle, s'injecte elle-même en paramètre.
+        // (Injection de dépendance)
+        public ContactViewModel(IView view)
         {
-            _model = new Contact();
+            _view = view;
         }
 
         public string Nom
         {
-            get { return _model.Nom; }
+            get { return _nom; }
             set
             {
-                _model.Nom = value;
+                _nom = value;
                 OnPropertyChanged(nameof(Nom));
                 OnPropertyChanged(nameof(PrenomNom));
             }
@@ -29,10 +35,10 @@ namespace Formulaire
 
         public string Prenom
         {
-            get { return _model.Prenom; }
+            get { return _prenom; }
             set
             {
-                _model.Prenom = value;
+                _prenom = value;
                 OnPropertyChanged(nameof(Prenom));
                 OnPropertyChanged(nameof(PrenomNom));
             }
@@ -40,7 +46,12 @@ namespace Formulaire
 
         public string PrenomNom
         {
-            get { return $"{_model.Prenom} {_model.Nom}"; }
+            get { return $"{Prenom} {Nom}"; }
+        }
+
+        public void Valider()
+        {
+            _view.Popup($"Bonjour {PrenomNom}");
         }
     }
 }

@@ -11,8 +11,8 @@
 
         <!-- Liaison de données : la propriété Text lit et écrit une propriété (Nom, Prenom) sur DataContext -->
         <!-- UpdateSourceTrigger=PropertyChanged : la synchronisation de données se fait pendant la frappe -->
-        <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
-        <TextBox Text="{Binding Prenom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
+        <TextBox Text="{Binding Nom, UpdateSourceTrigger = PropertyChanged}" Margin="4" Padding="4" />
+        <TextBox Text="{Binding Prenom, UpdateSourceTrigger = PropertyChanged}" Margin="4" Padding="4" />
 
         <TextBlock Text="{Binding PrenomNom}" Margin="4" />
 

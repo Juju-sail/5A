@@ -18,7 +18,7 @@ namespace Formulaire
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IView
     {
         private readonly ContactViewModel _c;
 
@@ -26,14 +26,19 @@ namespace Formulaire
         {
             InitializeComponent();
 
-            _c = new ContactViewModel();
+            _c = new ContactViewModel(this);
             DataContext = _c; // DataContext est une propriété héritée
                               // Définit l'objet partagé avec XAML 
         }
 
+        public void Popup(string message)
+        {
+            MessageBox.Show(message);
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Bonjour {_c.PrenomNom}");
+            _c.Valider();
         }
     }
 }
