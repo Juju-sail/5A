@@ -2,20 +2,21 @@
 ConsoleObservable o = new ConsoleObservable();
 
 // Abonnement de l'observateur à l'objet observable.
-
-// o.Observateurs.Add(Majuscules);
+o.Observateur += Majuscules;
+// Désabonnement
+o.Observateur -= Majuscules;
 
 // Ou bien :
-o.Abonne(texte => // En C#, on appelle cela une expression lambda
+o.Observateur += texte => // En C#, on appelle cela une expression lambda
                             // En général, une fonction en ligne (inline)
 {
     Console.WriteLine(texte.ToUpper());
-});
+};
 
-o.Abonne(SansEspaces(texte =>
+o.Observateur += SansEspaces(texte =>
 {
     Console.WriteLine(texte.ToUpper());
-}));
+});
 
 o.Demarre();
 
@@ -37,14 +38,8 @@ static ConsoleObservateur SansEspaces(ConsoleObservateur observateur)
 
 class ConsoleObservable
 {
-    private ConsoleObservateur? _observateur;
-
-    public void Abonne(ConsoleObservateur o)
-    {
-        // Combine deux fonctions : la fonction résultante appelle successivement ses deux composantes. 
-
-        _observateur = _observateur + o;
-    }
+    // Le mot-clé event permet la combinaison de fonction à l'aide de += et -=
+    public event ConsoleObservateur? Observateur;
 
     public void Demarre()
     {
@@ -53,7 +48,7 @@ class ConsoleObservable
             string? texte = Console.ReadLine();
             if (texte != null)
             {
-                if (_observateur != null) _observateur(texte);
+                if (Observateur != null) Observateur(texte);
             }
         }
     }
