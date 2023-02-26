@@ -1,48 +1,36 @@
 ﻿
 ConsoleObservable o = new ConsoleObservable();
 
-// Abonnement de l'obervateur à l'objet observable.
-o.Observateurs.Add(new MajusculesObservateur());
-o.Observateurs.Add(new SansEspacesObservateur(new MajusculesObservateur()));
+// Abonnement de l'observateur à l'objet observable.
+
+// o.Observateurs.Add(Majuscules);
+
+// Ou bien :
+o.Observateurs.Add(texte => // En C#, on appelle cela une expression lambda
+                            // En général, une fonction en ligne (inline)
+{
+    Console.WriteLine(texte.ToUpper());
+});
 
 o.Demarre();
 
-class MajusculesObservateur : IConsoleObservateur
+static void Majuscules(string texte)
 {
-    public void NouvelleLigne(string texte)
-    {
-        Console.WriteLine(texte.ToUpper());
-    }
+    Console.WriteLine(texte.ToUpper());
 }
-
-class SansEspacesObservateur : IConsoleObservateur
-{
-    private readonly IConsoleObservateur _observateur;
-
-    public SansEspacesObservateur(IConsoleObservateur observateur)
-    {
-        _observateur = observateur;
-    }
-
-    public void NouvelleLigne(string texte)
-    {
-        _observateur.NouvelleLigne(texte.Replace(" ", ""));
-    }
-}
-
 
 #region ConsoleObservable / IConsoleObservateur
 
 class ConsoleObservable
 {
-    private readonly List<IConsoleObservateur> _observateurs;
+    private readonly List<ConsoleObservateur> _observateurs;
 
     public ConsoleObservable()
     {
-        _observateurs = new List<IConsoleObservateur>();
+        _observateurs = new List<ConsoleObservateur>();
     }
 
-    public List<IConsoleObservateur> Observateurs
+    public List<ConsoleObservateur> Observateurs
     {
         get { return _observateurs; }
     }
@@ -54,18 +42,17 @@ class ConsoleObservable
             string? texte = Console.ReadLine();
             if (texte != null)
             {
-                foreach (IConsoleObservateur o in _observateurs)
+                foreach (ConsoleObservateur o in _observateurs)
                 {
-                    o.NouvelleLigne(texte);
+                    o(texte);
                 }
             }
         }
     }
 }
 
-interface IConsoleObservateur
-{
-    void NouvelleLigne(string texte);
-}
+// Délégué = pointeur de fonction
+// ConsoleObservateur représente une méthode void(string)
+delegate void ConsoleObservateur(string texte);
 
 #endregion
