@@ -11,9 +11,21 @@ namespace Formulaire
     {
         private readonly Contact _model;
 
+        // Ajout d'un contact en BD
         public ContactViewModel()
         {
             _model = new Contact();
+        }
+
+        // Import d'un contact existant en BD
+        public ContactViewModel(Contact model)
+        {
+            _model = model;
+        }
+
+        public Contact Model
+        {
+            get { return _model; }
         }
 
         public string Nom

@@ -14,15 +14,23 @@ namespace Formulaire
     {
         // ObservableCollection<> = List<> + Notification de l'IU à chaque modification.
 
+        private readonly                        AnnuaireContext _bd;
         private readonly ObservableCollection<ContactViewModel> _contacts;
         private                                ContactViewModel _nouveau;
         private                               ContactViewModel? _selection;
 
-        public MainViewModel()
+        public MainViewModel(AnnuaireContext bd)
         {
+            _bd        = bd;
             _contacts  = new ObservableCollection<ContactViewModel>();
             _nouveau   = new ContactViewModel();
             _selection = null;
+
+            // Import des contacts existants en BD.
+            foreach (Contact c in _bd.Contacts)
+            {
+                _contacts.Add(new ContactViewModel(c));
+            }
         }
 
         // Encapsulation dans une collection en lecture seule.
@@ -53,6 +61,7 @@ namespace Formulaire
 
         public void Ajout()
         {
+            _bd.Contacts.Add(_nouveau.Model); // Ecriture BD.
             _contacts.Add(_nouveau);
             Selection = _nouveau;
 
@@ -70,6 +79,7 @@ namespace Formulaire
         {
             if (_selection != null)
             {
+                _bd.Contacts.Remove(_selection.Model); // Ecriture BD.
                 _contacts.Remove(_selection);
                 Selection = null;
             }
