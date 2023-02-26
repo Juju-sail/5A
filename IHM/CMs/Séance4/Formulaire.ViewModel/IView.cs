@@ -10,5 +10,7 @@ namespace Formulaire
     public interface IView
     {
         void Popup(string message);
+
+        void Affiche(ContactViewModel c);
     }
 }

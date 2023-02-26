@@ -16,7 +16,8 @@
 
         <TextBlock Text="{Binding PrenomNom}" Margin="4" />
 
-        <Button Content="Valider" Margin="4" Padding="4" Click="Button_Click" />
+        <Button Content="Valider" Margin="4" Padding="4" Click="ValiderButton_Click" />
+        <Button Content="Nouvelle vue" Margin="4" Padding="4" Click="VueButton_Click" />
 
     </StackPanel>
 </Window>

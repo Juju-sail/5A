@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\04 - Découpe en projets\\Formulaire.ViewModel\\Formulaire.ViewModel.csproj": {}
+    "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\05 - Ouverture de plusieurs fenêtres\\Formulaire.ViewModel\\Formulaire.ViewModel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\04 - Découpe en projets\\Formulaire.ViewModel\\Formulaire.ViewModel.csproj": {
+    "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\05 - Ouverture de plusieurs fenêtres\\Formulaire.ViewModel\\Formulaire.ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\04 - Découpe en projets\\Formulaire.ViewModel\\Formulaire.ViewModel.csproj",
+        "projectUniqueName": "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\05 - Ouverture de plusieurs fenêtres\\Formulaire.ViewModel\\Formulaire.ViewModel.csproj",
         "projectName": "Formulaire.ViewModel",
-        "projectPath": "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\04 - Découpe en projets\\Formulaire.ViewModel\\Formulaire.ViewModel.csproj",
+        "projectPath": "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\05 - Ouverture de plusieurs fenêtres\\Formulaire.ViewModel\\Formulaire.ViewModel.csproj",
         "packagesPath": "C:\\Users\\julie\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\04 - Découpe en projets\\Formulaire.ViewModel\\obj\\",
+        "outputPath": "C:\\Users\\julie\\Documents\\PolytechNancy\\5A\\IHM\\CMs\\Séance4\\05 - Ouverture de plusieurs fenêtres\\Formulaire.ViewModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\julie\\AppData\\Roaming\\NuGet\\NuGet.Config",

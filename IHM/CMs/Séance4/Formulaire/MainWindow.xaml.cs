@@ -18,27 +18,27 @@ namespace Formulaire
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IView
+    public partial class MainWindow : Window
     {
-        private readonly ContactViewModel _c;
-
         public MainWindow()
         {
             InitializeComponent();
-
-            _c = new ContactViewModel(this);
-            DataContext = _c; // DataContext est une propriété héritée
-                              // Définit l'objet partagé avec XAML 
         }
 
-        public void Popup(string message)
+        private void ValiderButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(message);
+            if (DataContext is ContactViewModel c)
+            {
+                c.Valider();
+            }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void VueButton_Click(object sender, RoutedEventArgs e)
         {
-            _c.Valider();
+            if (DataContext is ContactViewModel c)
+            {
+                c.NouvelleVue();
+            }
         }
     }
 }

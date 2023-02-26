@@ -52,5 +52,10 @@ namespace Formulaire
         {
             _view.Popup($"Bonjour {PrenomNom}");
         }
+
+        public void NouvelleVue()
+        {
+            _view.Affiche(this);
+        }
     }
 }
