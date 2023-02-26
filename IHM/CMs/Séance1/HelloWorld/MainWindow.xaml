@@ -7,22 +7,10 @@
         mc:Ignorable="d"
         Title="Première application" Height="450" Width="800"
         Background="LightGoldenrodYellow">
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="4">
-        
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4">
-            <StackPanel>
-                <!-- Dans le panneau Propriétés : Action de génération : Ressource -->
-                <Image Source="mario.png" Stretch="Uniform" Height="48" Margin="4" />
-                <TextBlock Text="Mario" HorizontalAlignment="Center" Margin="4"/>
-            </StackPanel>
-        </Button>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4">
-            <StackPanel>
-                <!-- Dans le panneau Propriétés : Action de génération : Ressource -->
-                <Image Source="toad.png" Stretch="Uniform" Height="48" Margin="4" />
-                <TextBlock Text="Toad" HorizontalAlignment="Center" Margin="4"/>
-            </StackPanel>
-        </Button>
-
+    <StackPanel VerticalAlignment="Center" Margin="4">
+        <TextBlock Text="Saisissez votre nom/prénom :" Margin="4" HorizontalAlignment="Center" />
+        <TextBox x:Name="_nomTb" Margin="4" Padding="4" />
+        <TextBox x:Name="_prenomTb" Margin="4" Padding="4" />
+        <Button Content="Valider" Margin="4" Padding="4" Click="Button_Click" />
     </StackPanel>
 </Window>
