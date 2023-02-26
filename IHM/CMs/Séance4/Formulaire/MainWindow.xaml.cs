@@ -24,21 +24,5 @@ namespace Formulaire
         {
             InitializeComponent();
         }
-
-        private void ValiderButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is ContactViewModel c)
-            {
-                c.Valider();
-            }
-        }
-
-        private void VueButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is ContactViewModel c)
-            {
-                c.NouvelleVue();
-            }
-        }
     }
 }

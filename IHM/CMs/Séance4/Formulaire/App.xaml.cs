@@ -23,14 +23,9 @@ namespace Formulaire
             // MainWindow win = new MainWindow();
             // win.Show();
 
-            ContactViewModel c = new ContactViewModel(this);
-
-            for (int i = 0; i < 3; i++)
-            {
-                MainWindow win = new MainWindow();
-                win.DataContext = c; // Définit l'objet partagé avec XAML
-                win.Show();
-            }
+            MainWindow win = new MainWindow();
+            win.DataContext = new ContactViewModel(this); // Définit l'objet partagé avec XAML
+            win.Show();
         }
 
         public void Popup(string message)

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Formulaire
 {
@@ -48,9 +49,19 @@ namespace Formulaire
             get { return $"{Prenom} {Nom}"; }
         }
 
+        public ICommand ValiderCommand
+        {
+            get { return new RelayCommand(Valider); }
+        }
+
         public void Valider()
         {
             _view.Popup($"Bonjour {PrenomNom}");
+        }
+
+        public ICommand NouvelleVueCommand
+        {
+            get { return new RelayCommand(NouvelleVue); }
         }
 
         public void NouvelleVue()
