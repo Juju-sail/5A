@@ -7,11 +7,19 @@
         mc:Ignorable="d"
         Title="Première application" Height="450" Width="800"
         Background="LightGoldenrodYellow">
-    <StackPanel VerticalAlignment="Center" Margin="4">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="Hello World!" Margin="4" VerticalAlignment="Center" />
-            <TextBox x:Name="_nomTb" Margin="4" Padding="4" />
-        </StackPanel>
-        <Button Content="Ok" Margin="4" Padding="4" Click="Button_Click" />
-    </StackPanel>
+    <Grid Margin="4">
+        <!-- Définition de 2 lignes et 2 colonnes -->
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Hello World!" Margin="4" />
+        <TextBox Grid.Row="0" Grid.Column="1" x:Name="_nomTb" Margin="4" Padding="4" />
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Ok" Margin="4" Padding="4" Click="Button_Click" />        
+    </Grid>
 </Window>
