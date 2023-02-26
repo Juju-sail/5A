@@ -16,9 +16,10 @@
             <TextBox Text="{Binding Nouveau.Prenom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
             
             <Button Content="Ajouter" Margin="4" Padding="4" Command="{Binding AjoutCommand}" />
-
+            <Button Content="Supprimer" Margin="4" Padding="4" Command="{Binding SuppressionCommand}" />
+            
         </StackPanel>
-        <ListBox ItemsSource="{Binding Contacts}" Margin="4">
+        <ListBox ItemsSource="{Binding Contacts}" SelectedItem="{Binding Selection}" Margin="4">
             <!-- Modèle d'affichage de chaque élément de la liste -->
             <ListBox.ItemTemplate>
                 <DataTemplate>
