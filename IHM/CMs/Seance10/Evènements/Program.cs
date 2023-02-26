@@ -6,13 +6,13 @@ ConsoleObservable o = new ConsoleObservable();
 // o.Observateurs.Add(Majuscules);
 
 // Ou bien :
-o.Observateurs.Add(texte => // En C#, on appelle cela une expression lambda
+o.Abonne(texte => // En C#, on appelle cela une expression lambda
                             // En général, une fonction en ligne (inline)
 {
     Console.WriteLine(texte.ToUpper());
 });
 
-o.Observateurs.Add(SansEspaces(texte =>
+o.Abonne(SansEspaces(texte =>
 {
     Console.WriteLine(texte.ToUpper());
 }));
@@ -37,16 +37,13 @@ static ConsoleObservateur SansEspaces(ConsoleObservateur observateur)
 
 class ConsoleObservable
 {
-    private readonly List<ConsoleObservateur> _observateurs;
+    private ConsoleObservateur? _observateur;
 
-    public ConsoleObservable()
+    public void Abonne(ConsoleObservateur o)
     {
-        _observateurs = new List<ConsoleObservateur>();
-    }
+        // Combine deux fonctions : la fonction résultante appelle successivement ses deux composantes. 
 
-    public List<ConsoleObservateur> Observateurs
-    {
-        get { return _observateurs; }
+        _observateur = _observateur + o;
     }
 
     public void Demarre()
@@ -56,10 +53,7 @@ class ConsoleObservable
             string? texte = Console.ReadLine();
             if (texte != null)
             {
-                foreach (ConsoleObservateur o in _observateurs)
-                {
-                    o(texte);
-                }
+                if (_observateur != null) _observateur(texte);
             }
         }
     }
