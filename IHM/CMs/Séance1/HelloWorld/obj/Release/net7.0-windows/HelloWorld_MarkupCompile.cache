@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\julie\Documents\PolytechNancy\5A\IHM\Séance1\03 - StackPanel\HelloWorld\obj\Debug\net7.0-windows\
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\Séance1\03 - StackPanel\HelloWorld\obj\Release\net7.0-windows\
 HelloWorld
 none
 false
-TRACE;DEBUG;NET;NET7_0;NETCOREAPP
+TRACE;RELEASE;NET;NET7_0;NETCOREAPP
 C:\Users\julie\Documents\PolytechNancy\5A\IHM\Séance1\03 - StackPanel\HelloWorld\App.xaml
 11407045341
 

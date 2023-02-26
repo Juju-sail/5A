@@ -8,8 +8,10 @@
         Title="Première application" Height="450" Width="800"
         Background="LightGoldenrodYellow">
     <StackPanel VerticalAlignment="Center" Margin="4">
-        <TextBlock Text="Hello World!" Margin="4" HorizontalAlignment="Center" />
-        <TextBox x:Name="_nomTb" Margin="4" Padding="4" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Hello World!" Margin="4" VerticalAlignment="Center" />
+            <TextBox x:Name="_nomTb" Margin="4" Padding="4" />
+        </StackPanel>
         <Button Content="Ok" Margin="4" Padding="4" Click="Button_Click" />
     </StackPanel>
 </Window>
