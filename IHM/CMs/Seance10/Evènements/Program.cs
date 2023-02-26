@@ -1,5 +1,10 @@
 ﻿
-ConsoleObservable o = new ConsoleObservable(new SansEspacesObservateur(new MajusculesObservateur()));
+ConsoleObservable o = new ConsoleObservable();
+
+// Abonnement de l'obervateur à l'objet observable.
+o.Observateurs.Add(new MajusculesObservateur());
+o.Observateurs.Add(new SansEspacesObservateur(new MajusculesObservateur()));
+
 o.Demarre();
 
 class MajusculesObservateur : IConsoleObservateur
@@ -30,11 +35,16 @@ class SansEspacesObservateur : IConsoleObservateur
 
 class ConsoleObservable
 {
-    private readonly IConsoleObservateur _observateur;
+    private readonly List<IConsoleObservateur> _observateurs;
 
-    public ConsoleObservable(IConsoleObservateur observateur)
+    public ConsoleObservable()
     {
-        _observateur = observateur;
+        _observateurs = new List<IConsoleObservateur>();
+    }
+
+    public List<IConsoleObservateur> Observateurs
+    {
+        get { return _observateurs; }
     }
 
     public void Demarre()
@@ -44,7 +54,10 @@ class ConsoleObservable
             string? texte = Console.ReadLine();
             if (texte != null)
             {
-                _observateur.NouvelleLigne(texte);
+                foreach (IConsoleObservateur o in _observateurs)
+                {
+                    o.NouvelleLigne(texte);
+                }
             }
         }
     }
