@@ -7,10 +7,7 @@
         mc:Ignorable="d"
         Title="Formulaire" Height="450" Width="800">
     <DockPanel Margin="4">
-        <UniformGrid Columns="2" DockPanel.Dock="Top">
-            <local:EditControl />
-            <local:EditControl />
-        </UniformGrid>
+        <local:EditControl DockPanel.Dock="Top" />
         <ListBox ItemsSource="{Binding Contacts}" SelectedItem="{Binding Selection}" Margin="4">
             <!-- Modèle d'affichage de chaque élément de la liste -->
             <ListBox.ItemTemplate>

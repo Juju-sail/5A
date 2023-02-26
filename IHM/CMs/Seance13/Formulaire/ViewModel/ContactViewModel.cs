@@ -9,15 +9,19 @@ namespace Formulaire
 {
     public class ContactViewModel : ViewModelBase
     {
-        private string _nom    = "Gogh";
-        private string _prenom = "Van";
+        private readonly Contact _model;
+
+        public ContactViewModel()
+        {
+            _model = new Contact();
+        }
 
         public string Nom
         {
-            get { return _nom; }
+            get { return _model.Nom; }
             set
             {
-                _nom = value;
+                _model.Nom = value;
                 OnPropertyChanged(nameof(Nom));
                 OnPropertyChanged(nameof(PrenomNom));
             }
@@ -25,10 +29,10 @@ namespace Formulaire
 
         public string Prenom
         {
-            get { return _prenom; }
+            get { return _model.Prenom; }
             set
             {
-                _prenom = value;
+                _model.Prenom = value;
                 OnPropertyChanged(nameof(Prenom));
                 OnPropertyChanged(nameof(PrenomNom));
             }
@@ -36,7 +40,7 @@ namespace Formulaire
 
         public string PrenomNom
         {
-            get { return $"{Prenom} {Nom}"; }
+            get { return $"{_model.Prenom} {_model.Nom}"; }
         }
 
         public override string ToString()
