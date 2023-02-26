@@ -15,7 +15,7 @@
             <TextBox Text="{Binding Nouveau.Nom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
             <TextBox Text="{Binding Nouveau.Prenom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
             
-            <Button Content="Ajouter" Margin="4" Padding="4" Click="Button_Click" />
+            <Button Content="Ajouter" Margin="4" Padding="4" Command="{Binding AjoutCommand}" />
 
         </StackPanel>
         <ListBox ItemsSource="{Binding Contacts}" Margin="4">

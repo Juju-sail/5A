@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Formulaire
 {
@@ -30,6 +31,11 @@ namespace Formulaire
         public ContactViewModel Nouveau
         {
             get { return _nouveau; }
+        }
+
+        public ICommand AjoutCommand
+        {
+            get { return new RelayCommand(Ajout); }
         }
 
         public void Ajout()
