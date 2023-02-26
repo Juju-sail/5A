@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloWorld"
         mc:Ignorable="d"
-        Title="Première application" Height="450" Width="800">
-    <Grid Background="LightGoldenrodYellow">
-        <TextBlock Text="Hello World!" HorizontalAlignment="Center" VerticalAlignment="Center" />
-    </Grid>
+        Title="Première application" Height="450" Width="800"
+        Background="LightGoldenrodYellow">
+    <StackPanel VerticalAlignment="Center" Margin="4">
+        <TextBlock Text="Hello World!" Margin="4" HorizontalAlignment="Center" />
+        <TextBox x:Name="_nomTb" Margin="4" Padding="4" />
+        <Button Content="Ok" Margin="4" Padding="4" Click="Button_Click" />
+    </StackPanel>
 </Window>

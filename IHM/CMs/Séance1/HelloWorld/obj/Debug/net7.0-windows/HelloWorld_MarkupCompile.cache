@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\julie\Documents\PolytechNancy\5A\IHM\Séance1\01 - HelloWorld\HelloWorld\obj\Debug\net7.0-windows\
-HelloWorld_d1g24omh_wpftmp
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\Séance1\02 - Interaction XAML-C#\HelloWorld\obj\Debug\net7.0-windows\
+HelloWorld
 none
 false
-TRACE;RELEASE;NET;NET7_0;NETCOREAPP
-C:\Users\julie\Documents\PolytechNancy\5A\IHM\Séance1\01 - HelloWorld\HelloWorld\App.xaml
+TRACE;DEBUG;NET;NET7_0;NETCOREAPP
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\Séance1\02 - Interaction XAML-C#\HelloWorld\App.xaml
 11407045341
 
-5-176645316
-396-472032784
+3-1233169557
+1981911467256
 MainWindow.xaml;
 
-False
+True
 
