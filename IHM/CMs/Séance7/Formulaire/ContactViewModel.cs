@@ -38,5 +38,10 @@ namespace Formulaire
         {
             get { return $"{Prenom} {Nom}"; }
         }
+
+        public override string ToString()
+        {
+            return PrenomNom;
+        }
     }
 }

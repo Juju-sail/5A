@@ -33,7 +33,7 @@ namespace Formulaire
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _lb.Items.Add(_c.PrenomNom);
+            _lb.Items.Add(_c);
 
             // Prépare le prochain ajout :
             _c = new ContactViewModel();
