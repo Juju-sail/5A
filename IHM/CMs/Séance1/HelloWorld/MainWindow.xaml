@@ -7,21 +7,11 @@
         mc:Ignorable="d"
         Title="Première application" Height="450" Width="800"
         Background="LightGoldenrodYellow">
-    <Grid Margin="4">
-        <!-- Définition de 2 lignes et 2 colonnes -->
-        <Grid.RowDefinitions>
-            <!-- Répartition 1/4 - 3/4 -->
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <!-- Répartition 2/3 - 1/3 -->
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Hello World!" Margin="4" />
-        <TextBox Grid.Row="0" Grid.Column="1" x:Name="_nomTb" Margin="4" Padding="4" />
-        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Ok" Margin="4" Padding="4" Click="Button_Click" />        
-    </Grid>
+    <DockPanel Margin="4">
+        <TextBlock DockPanel.Dock="Top" Text="Hello World!" Margin="4" />
+        <Border Background="LightGreen" DockPanel.Dock="Right" Width="100" Margin="4"/>
+        <TextBox DockPanel.Dock="Bottom" x:Name="_nomTb" Margin="4" Padding="4" />
+        <Border Background="LightBlue" DockPanel.Dock="Left" Width="100" Margin="4"/>
+        <Button Content="Ok" Margin="4" Padding="4" Click="Button_Click" />        
+    </DockPanel>
 </Window>
