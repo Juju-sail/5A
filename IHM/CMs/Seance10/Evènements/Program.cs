@@ -12,11 +12,25 @@ o.Observateurs.Add(texte => // En C#, on appelle cela une expression lambda
     Console.WriteLine(texte.ToUpper());
 });
 
+o.Observateurs.Add(SansEspaces(texte =>
+{
+    Console.WriteLine(texte.ToUpper());
+}));
+
 o.Demarre();
 
 static void Majuscules(string texte)
 {
     Console.WriteLine(texte.ToUpper());
+}
+
+// Un peu de programmation fonctionnelle : des fonctions qui créent d'autres fonctions
+static ConsoleObservateur SansEspaces(ConsoleObservateur observateur)
+{
+    return texte =>
+    {
+        observateur(texte.Replace(" ", ""));
+    };
 }
 
 #region ConsoleObservable / IConsoleObservateur
