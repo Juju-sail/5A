@@ -7,27 +7,22 @@
         mc:Ignorable="d"
         Title="Première application" Height="450" Width="800"
         Background="LightGoldenrodYellow">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="4">
         
-        <!-- Dans le panneau Propriétés : Action de génération : Ressource -->
-        <Image Source="mario.png" Stretch="Uniform" Grid.Column="0" />
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4">
+            <StackPanel>
+                <!-- Dans le panneau Propriétés : Action de génération : Ressource -->
+                <Image Source="mario.png" Stretch="Uniform" Height="48" Margin="4" />
+                <TextBlock Text="Mario" HorizontalAlignment="Center" Margin="4"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4">
+            <StackPanel>
+                <!-- Dans le panneau Propriétés : Action de génération : Ressource -->
+                <Image Source="toad.png" Stretch="Uniform" Height="48" Margin="4" />
+                <TextBlock Text="Toad" HorizontalAlignment="Center" Margin="4"/>
+            </StackPanel>
+        </Button>
 
-        <Image Source="mario.png" Stretch="Uniform" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
-            <!--
-            <Image.RenderTransform>
-                <RotateTransform Angle="30" />
-            </Image.RenderTransform>
-            -->
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1" /> <!-- Symmérie / axe Y -->
-                    <RotateTransform Angle="30" />
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-    </Grid>
+    </StackPanel>
 </Window>
