@@ -20,24 +20,23 @@ namespace Formulaire
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ContactViewModel _c;
+        private MainViewModel _vm;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            _c = new ContactViewModel();
-            DataContext = _c; // DataContext est une propriété héritée
-                              // Définit l'objet partagé avec XAML 
+            _vm = new MainViewModel();
+            DataContext = _vm; // DataContext est une propriété héritée
+                               // Définit l'objet partagé avec XAML 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _lb.Items.Add(_c);
+            _vm.Contacts.Add(_vm.Nouveau);
 
             // Prépare le prochain ajout :
-            _c = new ContactViewModel();
-            DataContext = _c;
+            _vm.Nouveau = new ContactViewModel();
         }
     }
 }
