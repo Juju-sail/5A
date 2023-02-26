@@ -9,8 +9,11 @@
         Background="LightGoldenrodYellow">
     <StackPanel VerticalAlignment="Center" Margin="4">
         <TextBlock Text="Saisissez votre nom/prénom :" Margin="4" HorizontalAlignment="Center" />
-        <TextBox x:Name="_nomTb" Margin="4" Padding="4" />
-        <TextBox x:Name="_prenomTb" Margin="4" Padding="4" />
+        
+        <!-- Liaison de données : la propriété Text lit et écrit une propriété (Nom, Prenom) sur DataContext -->
+        <TextBox Text="{Binding Nom}" Margin="4" Padding="4" />
+        <TextBox Text="{Binding Prenom}" Margin="4" Padding="4" />
+        
         <Button Content="Valider" Margin="4" Padding="4" Click="Button_Click" />
     </StackPanel>
 </Window>

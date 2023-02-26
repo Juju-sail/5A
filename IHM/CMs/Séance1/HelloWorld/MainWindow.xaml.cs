@@ -20,14 +20,42 @@ namespace HelloWorld
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly Contact _c;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            _c = new Contact();
+            DataContext = _c; // DataContext est une propriété héritée
+                              // Définit l'objet partagé avec XAML 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Bonjour {_prenomTb.Text} {_nomTb.Text}");
+            MessageBox.Show($"Bonjour {_c.PrenomNom}");
+        }
+    }
+
+    public class Contact
+    {
+        public string Nom { get; set; } = string.Empty;
+
+        // Equivalent :
+        //
+        // private string _nom = string.Empty;
+        // 
+        // public string Nom
+        // {
+        //     get { return _nom; }
+        //     set { _nom = value; }
+        // }
+
+        public string Prenom { get; set; } = string.Empty;
+
+        public string PrenomNom
+        {
+            get { return $"{Prenom} {Nom}"; }
         }
     }
 }
