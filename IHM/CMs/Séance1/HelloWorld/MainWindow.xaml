@@ -10,12 +10,12 @@
     <Grid Margin="4">
         <!-- Définition de 2 lignes et 2 colonnes -->
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/> <!-- Hauteur ajustée au contenu -->
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/> <!-- Largeur fixe -->
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Hello World!" Margin="4" />
