@@ -9,11 +9,14 @@
     <StackPanel>
         <TextBlock Text="Saisissez votre nom/prénom :" Margin="4" HorizontalAlignment="Center" />
 
-        <!-- Liaison de données : la propriété Text lit et écrit une propriété (Nom, Prenom) sur DataContext -->
-        <!-- UpdateSourceTrigger=PropertyChanged : la synchronisation de données se fait pendant la frappe -->
-        <TextBox Text="{Binding Nouveau.Nom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
-        <TextBox Text="{Binding Nouveau.Prenom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
-
+        <!-- Redéfinition du DataContext : on écrit ensuite Nom/Prenom plutôt que Nouveau.Nom/Prenom -->
+        <StackPanel DataContext="{Binding Nouveau}">
+            <!-- Liaison de données : la propriété Text lit et écrit une propriété (Nom, Prenom) sur DataContext -->
+            <!-- UpdateSourceTrigger=PropertyChanged : la synchronisation de données se fait pendant la frappe -->
+            <TextBox Text="{Binding Nom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
+            <TextBox Text="{Binding Prenom, UpdateSourceTrigger=PropertyChanged}" Margin="4" Padding="4" />
+        </StackPanel>
+        
         <Button Content="Ajouter" Margin="4" Padding="4" Command="{Binding AjoutCommand}" />
         <Button Content="Supprimer" Margin="4" Padding="4" Command="{Binding SuppressionCommand}" />
 
