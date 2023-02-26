@@ -1,0 +1,12 @@
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\bin\Debug\net6.0\ModelVueProjet.deps.json
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\bin\Debug\net6.0\ModelVueProjet.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\bin\Debug\net6.0\ModelVueProjet.pdb
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\obj\Debug\net6.0\ModelVueProjet.csproj.AssemblyReference.cache
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\obj\Debug\net6.0\ModelVueProjet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\obj\Debug\net6.0\ModelVueProjet.AssemblyInfoInputs.cache
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\obj\Debug\net6.0\ModelVueProjet.AssemblyInfo.cs
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\obj\Debug\net6.0\ModelVueProjet.csproj.CoreCompileInputs.cache
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\obj\Debug\net6.0\ModelVueProjet.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\obj\Debug\net6.0\refint\ModelVueProjet.dll
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\obj\Debug\net6.0\ModelVueProjet.pdb
+C:\Users\julie\Documents\PolytechNancy\5A\IHM\DM\MusicLibrary-WPF\ModelVueProjet\obj\Debug\net6.0\ref\ModelVueProjet.dll
