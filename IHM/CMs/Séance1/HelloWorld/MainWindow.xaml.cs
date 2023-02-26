@@ -24,10 +24,5 @@ namespace HelloWorld
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show($"Bonjour {_nomTb.Text}");
-        }
     }
 }

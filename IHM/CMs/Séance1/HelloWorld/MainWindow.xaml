@@ -7,11 +7,27 @@
         mc:Ignorable="d"
         Title="Première application" Height="450" Width="800"
         Background="LightGoldenrodYellow">
-    <StackPanel VerticalAlignment="Center">
-        <Border Background="AliceBlue" BorderThickness="2" BorderBrush="LightBlue" CornerRadius="8" Margin="4">
-            <TextBlock Text="Hello World!" Margin="4" />
-        </Border>
-        <TextBox x:Name="_nomTb" Margin="4" Padding="4" />
-        <Button Content="Ok" Margin="4" Padding="4" Click="Button_Click" />
-    </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Dans le panneau Propriétés : Action de génération : Ressource -->
+        <Image Source="mario.png" Stretch="Uniform" Grid.Column="0" />
+
+        <Image Source="mario.png" Stretch="Uniform" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
+            <!--
+            <Image.RenderTransform>
+                <RotateTransform Angle="30" />
+            </Image.RenderTransform>
+            -->
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1" /> <!-- Symmérie / axe Y -->
+                    <RotateTransform Angle="30" />
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
 </Window>
