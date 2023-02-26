@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Formulaire
 {
@@ -20,19 +21,24 @@ namespace Formulaire
             _nouveau  = new ContactViewModel();
         }
 
-        public ObservableCollection<ContactViewModel> Contacts
+        // Encapsulation dans une collection en lecture seule.
+        public ReadOnlyObservableCollection<ContactViewModel> Contacts
         {
-            get { return _contacts; }
+            get { return new ReadOnlyObservableCollection<ContactViewModel>(_contacts); }
         }
 
         public ContactViewModel Nouveau
         {
             get { return _nouveau; }
-            set 
-            { 
-                _nouveau = value;
-                OnPropertyChanged(nameof(Nouveau));
-            }
+        }
+
+        public void Ajout()
+        {
+            _contacts.Add(_nouveau);
+
+            // Prépare le prochain ajout :
+            _nouveau = new ContactViewModel();
+            OnPropertyChanged(nameof(Nouveau));
         }
     }
 }

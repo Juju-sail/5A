@@ -29,14 +29,14 @@ namespace Formulaire
             _vm = new MainViewModel();
             DataContext = _vm; // DataContext est une propriété héritée
                                // Définit l'objet partagé avec XAML 
+
+            // Interdit car collection en lecture seule.
+            // _vm.Contacts.Add(new ContactViewModel());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _vm.Contacts.Add(_vm.Nouveau);
-
-            // Prépare le prochain ajout :
-            _vm.Nouveau = new ContactViewModel();
+            _vm.Ajout();
         }
     }
 }
